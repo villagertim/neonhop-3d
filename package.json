@@ -1,0 +1,18 @@
+{
+  "name": "neonhop-3d",
+  "version": "1.0.0",
+  "description": "NeonHop 3D: Empirical Research Testbed for System 1 Decision Models",
+  "type": "module",
+  "scripts": {
+    "start": "python3 server.py"
+  },
+  "keywords": [
+    "neuro-symbolic",
+    "system-1",
+    "typesafe-jev",
+    "webgl",
+    "threejs"
+  ],
+  "author": "Antigravity Autonomous Systems",
+  "license": "MIT"
+}

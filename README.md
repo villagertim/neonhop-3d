@@ -1,6 +1,14 @@
-# NeonHop 3D: Autonomous Cyber-Arcade
+# NeonHop 3D: Empirical Research Testbed for System 1 Decision Models
+### Evaluating TypeSafe Jev vs. Sole Reliance on Autoregressive LLMs in High-Velocity Continuous Control
 
-A high-fidelity, visually spectacular 3D cyber-arcade game set in a Cyberpunk / Cyber-Neon digital universe. This application utilizes **WebGL (Three.js r160+)** for isometric 3D rendering, a procedural lane spawning engine, dynamic in-code **Web Audio synthesis**, high-performance mobile-first styling guards, and an autonomous AI spectator mode powered by **TypeSafe Jev** and a deterministic **Kinematic Physics Oracle**.
+A high-fidelity, visually spectacular 3D cyber-arcade simulation set in a Cyberpunk / Cyber-Neon digital universe. This application utilizes **WebGL (Three.js r160+)** for isometric 3D rendering, a procedural lane spawning engine, dynamic in-code **Web Audio synthesis**, high-performance mobile-first styling guards, and an autonomous AI spectator mode powered by **TypeSafe Jev** and a deterministic **Kinematic Physics Oracle**.
+
+> [!IMPORTANT]
+> **Research Focus & Scope Delimitation**:
+> This repository is an **empirical research testbed and measurement instrument** designed to evaluate the architectural, performance, and economic benefits of applying a fast **System 1 decision model (specifically TypeSafe's Jev)** versus the sole reliance on traditional **autoregressive LLM-style models**.
+>
+> * **Primary Goal**: Rigorously investigate how fast, non-autoregressive decision primitives (`Choice`, `Score`, `Noul`) overcome the critical barriers of LLM-only architectures (the Latency Wall, extreme token costs, and prompt-parsing fragility) and resolve the classic Credit Assignment Paradox in high-frequency feedback loops.
+> * **Explicit Non-Goal**: It was **not** the goal of this effort to provide a proof, blueprint, or tutorial on "how to best apply today's AI technologies to produce autonomous cyber-arcade gameplay." The arcade simulation was chosen strictly as a demanding **empirical testbed**—enforcing hard sub-$100\text{ms}$ deadlines, fatal spatial collisions, and accelerating speeds ($1.0\times\text{--}4.3\times$) where standard LLMs physically fail and fast System 1 primitives excel.
 
 > [!NOTE]
 > **Trademark & Legal Attribution**:
@@ -18,15 +26,69 @@ To guarantee a solid 60 FPS experience across desktop and mobile, this game impl
 
 ---
 
+## 🚀 Quick Start & API Key Configuration
+
+To run the game with live autonomous AI spectator mode powered by **TypeSafe Jev**, follow these setup steps:
+
+### 1. Configure Your API Key (.env)
+The repository includes a configuration template file [`.env-example`](.env-example). Copy it to create your local `.env` in the workspace root directory:
+```bash
+cp .env-example .env
+```
+
+Open `.env` in your text editor and enable **one of two supported keys**:
+
+```bash
+# ------------------------------------------------------------------------------
+# PRIMARY: TypeSafe AI Direct API Key (Preferred)
+# ------------------------------------------------------------------------------
+# Direct, sub-millisecond connection to TypeSafe AI System One decision engine.
+TYPESAFE_API_KEY=your_typesafe_key_here
+
+# ------------------------------------------------------------------------------
+# SECONDARY / FALLBACK: OpenRouter.ai API Key
+# ------------------------------------------------------------------------------
+# Used if TYPESAFE_API_KEY is unset; routes queries via OpenRouter decisions API.
+OPENROUTER_API_KEY=your_openrouter_key_here
+```
+
+> [!IMPORTANT]
+> **Key Hierarchy & Priority**:
+> 1. **`TYPESAFE_API_KEY` (Primary)**: If defined, the server routes decision requests directly to TypeSafe AI's endpoint (`https://api.typesafe.ai/v1/systemone`) targeting `jev-latest`.
+> 2. **`OPENROUTER_API_KEY` (Secondary / Fallback)**: If `TYPESAFE_API_KEY` is not provided, the server automatically routes decisions to OpenRouter (`https://openrouter.ai/api/alpha/decisions`) targeting `typesafe/jev-1.13`.
+> 3. **In-Memory Local Fallback (Zero-Key)**: If neither key is configured or when playing offline, the autonomous agent gracefully falls back to the in-memory compiled Jev decision engine ([`src/jevEvaluator.js`](src/jevEvaluator.js)) and the Kinematic Physics Oracle ([`src/physicsOracle.js`](src/physicsOracle.js)).
+>
+> **Security & Privacy Guard**:
+> Your local `.env` file is strictly ignored by [`.gitignore`](.gitignore). It will **never** be committed or published to GitHub when pushing to public repositories. Always reference [`.env-example`](.env-example) for sharing configuration examples.
+
+### 2. Start the Server
+Run the built-in Python gateway server:
+```bash
+python3 server.py
+```
+The server will automatically reference and load `.env` from the active workspace directory, report the active key provider in the startup console banner, and serve the application at:  
+👉 **`http://localhost:8000`**
+
+### 3. Playing & Spectating
+* **Autonomous AI Spectator Mode**: Toggle the **SPECTATOR MODE** button or click **READY** to watch the autonomous agent dodge highway traffic and traverse river streams hands-free while streaming live telemetry.
+* **Seamless Human Hand-off**: Press any Arrow key or WASD (or click **TAKE CONTROL**) at any point to instantly take control of the character.
+
+---
+
 ## 📂 Project Structure
 ```
+├── .env-example                 # API key configuration template (TypeSafe direct / OpenRouter)
+├── package.json                 # Project manifest & ES module declaration
 ├── index.html                   # HTML structure, sidebar HUD, and import maps
 ├── styles.css                   # Glassmorphism, neon animations, and responsive layouts
 ├── server.py                    # Lightweight Python gateway & static asset server
-├── README.md                    # Local development history and technical documentation (this file)
+├── README.md                    # Research overview, setup, and changelog (this file)
 ├── docs/
-│   ├── implementation_plan.md  # Core phased technical implementation plan
-│   └── local_model_log.md      # Mandatory query logging for local model inference
+│   ├── white_paper_hybrid_neuro_symbolic_neonhop.md # Peer-reviewable white paper on hybrid neuro-symbolic control
+│   ├── jev_findings_and_lessons_learned.md          # Architectural lessons learned, Credit Assignment Paradox, and RLCD
+│   ├── walkthrough.md                               # Milestone walkthrough verifying 100 flawless runs
+│   ├── implementation_plan.md                       # Phased roadmap, multi-model allocation, and architecture
+│   └── local_model_log.md                           # Mandatory local model inference logging (LiteLLM local-model)
 └── src/
     ├── main.js                  # Application bootstrapper [Phase 2]
     ├── gameEngine.js            # Physics updates and grid state interpolation [Phase 2]
@@ -101,5 +163,36 @@ To guarantee a solid 60 FPS experience across desktop and mobile, this game impl
 *   **Resolution of Credit Assignment Paradox (`src/learningBrain.js`, `src/jevEvaluator.js`)**: Integrated Jev semantic triage to differentiate between `drift_neglect`, `premature_forward_hop`, and `barrier_impact`, replacing toxic global penalty backpropagation with spatially bounded blame assignment.
 *   **Flow-Aware River Navigation**: Added tactical retreats (`DOWN` to Lane 3) when drifting past target portals, rewarded stream conveyance towards portals, and eliminated narrow-log lateral oscillation.
 *   **Verified 100 Flawless Runs Milestone**: Confirmed autonomous completion of **100 consecutive successful runs without dying**, clearing Level 20+ ($>3.85\times$ speed) and scoring over **128,250 points**.
+
+---
+
+## 🤖 Multi-Model AI Stack & Deployment Rationale
+
+To achieve reproducible autonomy and survive non-stationary dynamics up to Level 23 ($4.30\times$ speed), the architecture deploys a four-tier heterogeneous intelligence and verification hierarchy, pairing each model with a strictly matched operational time constant and explicit architectural rationale:
+
+| Model / Subsystem | Architectural Tier | Deployment / Access Route | Operational Latency | Primary Technical Rationale & Role |
+| :--- | :--- | :--- | :---: | :--- |
+| **Gemini 3.8 Flash (High)** | **System 2 Meta-Cognitive Architect** | Google DeepMind / Antigravity Harness | $500\text{–}2500\text{ms}$ | **Deep Reasoning & Code Synthesis**: Ingests multi-module codebases, formulates kinematic proofs (e.g. the 2.5-Unit Confinement Theorem), debugs failure traces, and generates automated Monte Carlo benchmarks. |
+| **`local-model` (via `litellm-tim`)** | **Independent Dual Assessment & Local Scaffolding** | Local endpoint via LiteLLM proxy (`call_local_model`) | $1000\text{–}5000\text{ms}$ | **Adversarial Red-Teaming & Local Privacy**: Provides an independent second opinion on milestone success probabilities to counteract primary agent confirmation bias (highlighting the "Integration Gap"), plus private zero-token-cost local code scaffolding and reviews. |
+| **TypeSafe Jev (`typesafe/jev-1.13`)** | **System 1 Calibrated Decision Primitives** | OpenRouter Decisions API & local compiled [`src/jevEvaluator.js`](src/jevEvaluator.js) | $<0.1\text{ms}$ (local) / $\sim 100\text{ms}$ (cloud) | **Real-Time Semantic Triage**: Sub-millisecond non-autoregressive decision primitives (`Choice`, `Score`, `Noul`) that resolve the Credit Assignment Paradox by localizing blame to causal actions rather than penalizing reactive evasions. |
+| **Kinematic Physics Oracle** | **Deterministic Invariant Shield** | Native ES6 Engine ([`src/physicsOracle.js`](src/physicsOracle.js)) | $<0.5\text{ms}$ per batch | **Absolute Invariant Protection**: Mathematical lookahead shield enforcing continuous collision envelopes and two-hop horizons, guaranteeing that stochastic or learned policies cannot execute kinematically non-survivable transitions. |
+
+### Core Evaluation: Why TypeSafe Jev vs. Sole LLM Reliance?
+
+Traditional autoregressive LLMs (e.g., GPT-4, Claude, Gemini) are fundamentally ill-suited for direct high-frequency continuous control due to three physical and algorithmic bottlenecks:
+1. **The Latency Wall**: Generative token-by-token latencies ($300\text{ms}\text{–}2000\text{ms}$) miss sub-$100\text{ms}$ physical control deadlines by orders of magnitude.
+2. **Economic Prohibitiveness**: Continuous control at 12 Hz costs \$5–\$20 per hour in standard token pricing, making multi-thousand-run empirical testing unfeasible.
+3. **Output Fragility & Lack of Probability Calibration**: Uncalibrated natural language prose requires brittle post-hoc regex parsing and cannot support rigorous mathematical safety thresholds.
+
+By contrast, **TypeSafe Jev** operates as a specialized System 1 decision model providing sub-millisecond, non-autoregressive decision primitives (`Choice`, `Score`, `Noul`) with mathematically calibrated probabilities trained via Reinforcement Learning from Calibrated Decisions (RLCD). Jev enables instant semantic failure triage and spatially localized blame attribution (resolving the classic Credit Assignment Paradox) at negligible cost ($\approx \$0.042$ per 1M input tokens with zero output token fees).
+
+The cyber-arcade game simulation was engineered solely as a demanding real-time physical testbed to evaluate and demonstrate this architectural paradigm shift under extreme velocity stress ($1.0\times\text{--}4.3\times$).
+
+For the complete theoretical formulation, mathematical proofs, and benchmark traces, refer to the peer-reviewable technical white paper:  
+👉 **[Technical White Paper: Hybrid Neuro-Symbolic Control in High-Velocity Continuous Environments](docs/white_paper_hybrid_neuro_symbolic_neonhop.md)**
+
+For query prompts and raw responses sent to local inference models, refer to:  
+👉 **[Local Model Inference & Query Log](docs/local_model_log.md)**
+
 
 

@@ -355,8 +355,8 @@ export class JevAgent {
             });
             if (resp.ok) {
                 const data = await resp.json();
-                if (data && data.decisions) {
-                    return this.parseJevResponse(data.decisions);
+                if (data && (data.decisions || (!data.error && (data.action || data.threat_level)))) {
+                    return this.parseJevResponse(data.decisions || data);
                 }
             }
         } catch (e) {}
