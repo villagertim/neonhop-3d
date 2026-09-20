@@ -1,0 +1,9 @@
+{
+  "src/main.js": "714bcd3460f45296b27414bccd015ab79e3c5f67c080e0521882b29b75dad4df",
+  "src/supportedJevAgent.js": "e447a15e5b41297c901683d987de4de9d913a2565c094814448dd61e62ad02a4",
+  "src/candidateForecasts.js": "9665fa75d83cee5ce6d38d3bf5cb4c811141fa540dceea228a3b15f8336ae4c0",
+  "src/jevAgent.js": "93080363dde6cf7dbfaeb21ce592ea3bbbd44b93a587b16c15ad2443c78da2ee",
+  "src/gameEngine.js": "e84d042921b302e1c47d529f22fab86e351a864282b87fe57fefc1ad5d14f801",
+  "server.py": "ce3f775acac98757ff2297a48a897c432d461ad5a6dadb9f5c66b6f40a669b3a",
+  "index.html": "5b873245d9e107f164318b9860ce5d21862a2dc3c87ae2dfdab67ffa82d31c10"
+}

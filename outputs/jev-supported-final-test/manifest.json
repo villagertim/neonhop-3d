@@ -1,0 +1,23 @@
+{
+  "startedAt": "2026-09-20T19:51:39.931406+00:00",
+  "maximumRequests": 12,
+  "timeoutSeconds": 8,
+  "retries": 0,
+  "selection": "First development state per zone and UP survival class with at least one safe action; no held-out states",
+  "hypothesis": "Supplying deterministic candidate forecasts improves Jev safe/progress selection over identical geometry-only questions",
+  "primaryMetric": "raw chosen action survives ten ticks",
+  "secondaryMetric": "chosen progressScore equals best safe candidate score",
+  "limitations": "Small selected development sample; frozen state; predictions and grading share engine; not a full-game or net improvement over local policy claim",
+  "casesSha256": "fbb6241f1a5061ffeda91f7f7b87d28f8ba0e3314235d8adad63c40826555ff9",
+  "estimatedCost": "12 calls at previous roughly 0.0001 cost per request; approximately 0.0012 reported currency units, variable with tokens",
+  "sources": {
+    "src/gameEngine.js": "e84d042921b302e1c47d529f22fab86e351a864282b87fe57fefc1ad5d14f801",
+    "src/jevAgent.js": "93080363dde6cf7dbfaeb21ce592ea3bbbd44b93a587b16c15ad2443c78da2ee",
+    "src/physicsOracle.js": "856057227e88bc30b536cf23f8c5897dd3638af93be1a43abfc22804c9ab81cc",
+    "src/learningBrain.js": "6f9963d68dd7348d503a85f8e4391786f08de78256d6437cca2d70a82b6689a3",
+    "src/jevEvaluator.js": "2f426debccec3ad5e05faa19ac32be2da975a5b93e13f92a6507e0d8d743deeb",
+    "benchmarks/jev-evaluation.mjs": "8e8bb1b1679e0dc8eca8ba5f07b729a0167b65d3f4f491d5f0af152e6748b185",
+    "benchmarks/jev-supported-final-test.mjs": "d50ce526b0e889115758af1ae95a384b169eaa3eab6162d08d05c0fde42fccc0",
+    "benchmarks/jev-supported-final-test.py": "7f3d24fdea3696f766b3e3c502a395e2c5f256d1f49796238a2a2b9fd02ec4bf"
+  }
+}

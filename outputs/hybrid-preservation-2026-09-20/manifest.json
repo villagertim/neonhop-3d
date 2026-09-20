@@ -1,0 +1,22 @@
+{
+  "captured_at": "2026-09-20T18:57:47.984618+00:00",
+  "source_files": {
+    "index.html": "8b1795f5743784eb354e0b96242043eb33b5dae6e91ece3804254a07db3e15b5",
+    "styles.css": "dda97d3003928525f9720c97cab0e32c8ae265d6428967dcd784f04a55eb101a",
+    "server.py": "8fac45d45805fb22fa87878ba42368b1a3d3a2833813c2d54dcb56aa5b08db13",
+    "README.md": "07d20c03900498ba11a416fd8424ea927d94f24ef243d8e2d8936a7b93addd03",
+    "package.json": "2ed0509a848fa3ac4004d77c34a32451673d4a6efca8f50a85429b987aea4d51",
+    "src/jevAgent.js": "93080363dde6cf7dbfaeb21ce592ea3bbbd44b93a587b16c15ad2443c78da2ee",
+    "src/main.js": "31b7cb1124d79e8460d1a74128783654b68859d4f4b2424c7d42c0f5d122db66",
+    "src/soundEngine.js": "8fe24221919c3702cc59366bd521f9818d7485fd2d3ee590ada8fb030b0d6326",
+    "src/jevEvaluator.js": "2f426debccec3ad5e05faa19ac32be2da975a5b93e13f92a6507e0d8d743deeb",
+    "src/gameEngine.js": "7fe3a3e135bc168db02ebf86e53347e94cd19f7679a045355937a944611ae4f9",
+    "src/physicsOracle.js": "856057227e88bc30b536cf23f8c5897dd3638af93be1a43abfc22804c9ab81cc",
+    "src/leaderboard.js": "82788d153a79b2af0366eac7fd4e352a9ef1d6c77d16c0ab549e438a753fc32c",
+    "src/renderer.js": "0a0d6d78d98d1f10a9485383e5550ce207a54c10af6c1c1a890ca682025ce156",
+    "src/inputManager.js": "16e10e22b9dc1b6520040152ebb512e28c291f11f8e9f6b34241511a14114635",
+    "src/learningBrain.js": "6f9963d68dd7348d503a85f8e4391786f08de78256d6437cca2d70a82b6689a3",
+    "benchmarks/autonomy.mjs": "d2a550a73b36d080a39a412d83dfc0f8e98dc04f76c1c1671ad64bf4a9ab1734",
+    "tests/browser-smoke.cjs": "20a86378213a649ec5e994d6df872002b4a62c331469516ba7c04e182ea45ecf"
+  }
+}

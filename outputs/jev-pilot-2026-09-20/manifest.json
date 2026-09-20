@@ -1,0 +1,157 @@
+{
+  "sourceSha256": {
+    "src/gameEngine.js": "7fe3a3e135bc168db02ebf86e53347e94cd19f7679a045355937a944611ae4f9",
+    "src/jevAgent.js": "93080363dde6cf7dbfaeb21ce592ea3bbbd44b93a587b16c15ad2443c78da2ee",
+    "src/physicsOracle.js": "856057227e88bc30b536cf23f8c5897dd3638af93be1a43abfc22804c9ab81cc",
+    "src/learningBrain.js": "6f9963d68dd7348d503a85f8e4391786f08de78256d6437cca2d70a82b6689a3",
+    "src/jevEvaluator.js": "2f426debccec3ad5e05faa19ac32be2da975a5b93e13f92a6507e0d8d743deeb",
+    "benchmarks/jev-evaluation.mjs": "8e8bb1b1679e0dc8eca8ba5f07b729a0167b65d3f4f491d5f0af152e6748b185"
+  },
+  "corpusSha256": "12b187b618a255f9207207a12b3eef9d10dca89241d068f395e663b52ed761f9",
+  "variants": [
+    "action",
+    "bundle",
+    "candidates"
+  ],
+  "questionSets": {
+    "action": {
+      "action": {
+        "type": "choice",
+        "instructions": "Determine the single best immediate movement for the cyber-frog to advance toward an empty goal portal (z=0) while surviving traffic, riding logs across the digital stream, and avoiding deadly obstacles or drowning:",
+        "criteria": {
+          "UP": "Hop forward toward the target portals (z decreases). Choose if the front tile is verified safe and leads toward an open portal.",
+          "DOWN": "Hop backward away from danger (z increases). Choose if trapped with no forward escape or falling off stream edge.",
+          "LEFT": "Hop left (x decreases). Choose to dodge oncoming vehicles, align with a floating log, or shift toward an unoccupied portal.",
+          "RIGHT": "Hop right (x increases). Choose to dodge oncoming vehicles, align with a floating log, or shift toward an unoccupied portal.",
+          "WAIT": "Stay in current position. Choose if current tile is safe (sidewalk, safe bank, or riding safely on a log) and moving in any direction right now would be fatal."
+        }
+      }
+    },
+    "bundle": {
+      "action": {
+        "type": "choice",
+        "instructions": "Determine the single best immediate movement for the cyber-frog to advance toward an empty goal portal (z=0) while surviving traffic, riding logs across the digital stream, and avoiding deadly obstacles or drowning:",
+        "criteria": {
+          "UP": "Hop forward toward the target portals (z decreases). Choose if the front tile is verified safe and leads toward an open portal.",
+          "DOWN": "Hop backward away from danger (z increases). Choose if trapped with no forward escape or falling off stream edge.",
+          "LEFT": "Hop left (x decreases). Choose to dodge oncoming vehicles, align with a floating log, or shift toward an unoccupied portal.",
+          "RIGHT": "Hop right (x increases). Choose to dodge oncoming vehicles, align with a floating log, or shift toward an unoccupied portal.",
+          "WAIT": "Stay in current position. Choose if current tile is safe (sidewalk, safe bank, or riding safely on a log) and moving in any direction right now would be fatal."
+        }
+      },
+      "threat_level": {
+        "type": "score",
+        "instructions": "Evaluate the immediate collision or drowning threat to the frog in its current position:",
+        "criteria": [
+          "safe",
+          "low_risk",
+          "moderate_risk",
+          "imminent_hazard",
+          "fatal_collision_imminent"
+        ]
+      },
+      "evacuate_log": {
+        "type": "noul",
+        "instructions": "Is the frog currently riding a log that is dangerously close to drifting off the screen boundaries (|x| > 4.8) requiring an immediate jump off?"
+      },
+      "forward_path_clear": {
+        "type": "noul",
+        "instructions": "Is the lane or tile directly ahead (z-1) verified safe from incoming vehicle collisions or drowning?"
+      }
+    },
+    "candidates": {
+      "action": {
+        "type": "choice",
+        "instructions": "Determine the single best immediate movement for the cyber-frog to advance toward an empty goal portal (z=0) while surviving traffic, riding logs across the digital stream, and avoiding deadly obstacles or drowning:",
+        "criteria": {
+          "UP": "Hop forward toward the target portals (z decreases). Choose if the front tile is verified safe and leads toward an open portal.",
+          "DOWN": "Hop backward away from danger (z increases). Choose if trapped with no forward escape or falling off stream edge.",
+          "LEFT": "Hop left (x decreases). Choose to dodge oncoming vehicles, align with a floating log, or shift toward an unoccupied portal.",
+          "RIGHT": "Hop right (x increases). Choose to dodge oncoming vehicles, align with a floating log, or shift toward an unoccupied portal.",
+          "WAIT": "Stay in current position. Choose if current tile is safe (sidewalk, safe bank, or riding safely on a log) and moving in any direction right now would be fatal."
+        }
+      },
+      "safe_UP": {
+        "type": "noul",
+        "instructions": "If the frog queues UP now, is that command legal and will it survive the next 10 physics ticks, with no further commands? Use state.rules for exact timing and collision rules. For WAIT, remain idle for all ten ticks. Judge this independently; other question answers are not available."
+      },
+      "progress_UP": {
+        "type": "score",
+        "instructions": "Rate the outcome of queuing UP now under the same ten-tick rules. Choose the highest applicable rubric level. Use a further ten-tick UP replay only to distinguish levels 1 and 2, assuming the frog survived the first horizon.",
+        "criteria": [
+          "Illegal command or death during the first ten ticks.",
+          "Survives but does not advance toward z=0; a subsequent UP command would be illegal or fatal within its next ten ticks.",
+          "Survives without advancing toward z=0; a subsequent UP command would be legal and survive its next ten ticks.",
+          "Survives and advances at least one row toward z=0 within the first ten ticks, without capturing a portal.",
+          "Captures an open portal within the first ten ticks."
+        ]
+      },
+      "safe_DOWN": {
+        "type": "noul",
+        "instructions": "If the frog queues DOWN now, is that command legal and will it survive the next 10 physics ticks, with no further commands? Use state.rules for exact timing and collision rules. For WAIT, remain idle for all ten ticks. Judge this independently; other question answers are not available."
+      },
+      "progress_DOWN": {
+        "type": "score",
+        "instructions": "Rate the outcome of queuing DOWN now under the same ten-tick rules. Choose the highest applicable rubric level. Use a further ten-tick UP replay only to distinguish levels 1 and 2, assuming the frog survived the first horizon.",
+        "criteria": [
+          "Illegal command or death during the first ten ticks.",
+          "Survives but does not advance toward z=0; a subsequent UP command would be illegal or fatal within its next ten ticks.",
+          "Survives without advancing toward z=0; a subsequent UP command would be legal and survive its next ten ticks.",
+          "Survives and advances at least one row toward z=0 within the first ten ticks, without capturing a portal.",
+          "Captures an open portal within the first ten ticks."
+        ]
+      },
+      "safe_LEFT": {
+        "type": "noul",
+        "instructions": "If the frog queues LEFT now, is that command legal and will it survive the next 10 physics ticks, with no further commands? Use state.rules for exact timing and collision rules. For WAIT, remain idle for all ten ticks. Judge this independently; other question answers are not available."
+      },
+      "progress_LEFT": {
+        "type": "score",
+        "instructions": "Rate the outcome of queuing LEFT now under the same ten-tick rules. Choose the highest applicable rubric level. Use a further ten-tick UP replay only to distinguish levels 1 and 2, assuming the frog survived the first horizon.",
+        "criteria": [
+          "Illegal command or death during the first ten ticks.",
+          "Survives but does not advance toward z=0; a subsequent UP command would be illegal or fatal within its next ten ticks.",
+          "Survives without advancing toward z=0; a subsequent UP command would be legal and survive its next ten ticks.",
+          "Survives and advances at least one row toward z=0 within the first ten ticks, without capturing a portal.",
+          "Captures an open portal within the first ten ticks."
+        ]
+      },
+      "safe_RIGHT": {
+        "type": "noul",
+        "instructions": "If the frog queues RIGHT now, is that command legal and will it survive the next 10 physics ticks, with no further commands? Use state.rules for exact timing and collision rules. For WAIT, remain idle for all ten ticks. Judge this independently; other question answers are not available."
+      },
+      "progress_RIGHT": {
+        "type": "score",
+        "instructions": "Rate the outcome of queuing RIGHT now under the same ten-tick rules. Choose the highest applicable rubric level. Use a further ten-tick UP replay only to distinguish levels 1 and 2, assuming the frog survived the first horizon.",
+        "criteria": [
+          "Illegal command or death during the first ten ticks.",
+          "Survives but does not advance toward z=0; a subsequent UP command would be illegal or fatal within its next ten ticks.",
+          "Survives without advancing toward z=0; a subsequent UP command would be legal and survive its next ten ticks.",
+          "Survives and advances at least one row toward z=0 within the first ten ticks, without capturing a portal.",
+          "Captures an open portal within the first ten ticks."
+        ]
+      },
+      "safe_WAIT": {
+        "type": "noul",
+        "instructions": "If the frog queues WAIT now, is that command legal and will it survive the next 10 physics ticks, with no further commands? Use state.rules for exact timing and collision rules. For WAIT, remain idle for all ten ticks. Judge this independently; other question answers are not available."
+      },
+      "progress_WAIT": {
+        "type": "score",
+        "instructions": "Rate the outcome of queuing WAIT now under the same ten-tick rules. Choose the highest applicable rubric level. Use a further ten-tick UP replay only to distinguish levels 1 and 2, assuming the frog survived the first horizon.",
+        "criteria": [
+          "Illegal command or death during the first ten ticks.",
+          "Survives but does not advance toward z=0; a subsequent UP command would be illegal or fatal within its next ten ticks.",
+          "Survives without advancing toward z=0; a subsequent UP command would be legal and survive its next ten ticks.",
+          "Survives and advances at least one row toward z=0 within the first ten ticks, without capturing a portal.",
+          "Captures an open portal within the first ten ticks."
+        ]
+      }
+    }
+  },
+  "combinationRule": "p(survive)>=0.8; maximum progress score, then survival probability; stable action order breaks ties; otherwise abstain",
+  "pilotIds": [
+    "trajectory-0-tick-0",
+    "trajectory-0-tick-106",
+    "trajectory-0-tick-392"
+  ]
+}

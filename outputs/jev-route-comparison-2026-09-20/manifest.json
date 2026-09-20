@@ -1,0 +1,60 @@
+{
+  "created_at": "2026-09-20T18:40:20.080521+00:00",
+  "source_trace_sha256": "1b7ea5fc8627a08f4c6f08f0f758f443a2438cce96284f9fec37fd6266785d50",
+  "script_sha256": "74fd43ad65f4a66956c9f00cd892ddd9941a27f2db25890da04c0b2d334b0679",
+  "maximum_requests": 12,
+  "timeout_seconds": 8,
+  "retries": 0,
+  "model_family": "Jev 1.13; aliases differ; record returned model identifiers",
+  "client": "Python urllib, fresh connection per request, direct from workstation, no local gateway hop",
+  "order": [
+    {
+      "state_id": "trajectory-0-tick-0",
+      "variant": "action",
+      "routes": [
+        "typesafe",
+        "openrouter"
+      ]
+    },
+    {
+      "state_id": "trajectory-0-tick-0",
+      "variant": "candidates",
+      "routes": [
+        "openrouter",
+        "typesafe"
+      ]
+    },
+    {
+      "state_id": "trajectory-0-tick-106",
+      "variant": "action",
+      "routes": [
+        "openrouter",
+        "typesafe"
+      ]
+    },
+    {
+      "state_id": "trajectory-0-tick-106",
+      "variant": "candidates",
+      "routes": [
+        "typesafe",
+        "openrouter"
+      ]
+    },
+    {
+      "state_id": "trajectory-0-tick-392",
+      "variant": "action",
+      "routes": [
+        "typesafe",
+        "openrouter"
+      ]
+    },
+    {
+      "state_id": "trajectory-0-tick-392",
+      "variant": "candidates",
+      "routes": [
+        "openrouter",
+        "typesafe"
+      ]
+    }
+  ]
+}
