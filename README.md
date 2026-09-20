@@ -1,105 +1,83 @@
-# NeonHop 3D: Empirical Research Testbed for System 1 Decision Models
-### Evaluating TypeSafe Jev vs. Sole Reliance on Autoregressive LLMs in High-Velocity Continuous Control
+# NeonHop 3D: Jev evaluation testbed
 
-A high-fidelity, visually spectacular 3D cyber-arcade simulation set in a Cyberpunk / Cyber-Neon digital universe. This application utilizes **WebGL (Three.js r160+)** for isometric 3D rendering, a procedural lane spawning engine, dynamic in-code **Web Audio synthesis**, high-performance mobile-first styling guards, and an autonomous AI spectator mode powered by **TypeSafe Jev** and a deterministic **Kinematic Physics Oracle**.
+The research goal is to **maximize Jev combined with locally executing application logic**. Physics prediction, safety checks, rules, memory, scheduling, and answer aggregation are allowed. **Jev must be the only inference model participating at runtime.** The game records requests, raw responses, executed actions, and outcomes to identify which integrations improve results.
 
-> [!IMPORTANT]
-> **Research Focus & Scope Delimitation**:
-> This repository is an **empirical research testbed and measurement instrument** designed to evaluate the architectural, performance, and economic benefits of applying a fast **System 1 decision model (specifically TypeSafe's Jev)** versus the sole reliance on traditional **autoregressive LLM-style models**.
->
-> * **Primary Goal**: Rigorously investigate how fast, non-autoregressive decision primitives (`Choice`, `Score`, `Noul`) overcome the critical barriers of LLM-only architectures (the Latency Wall, extreme token costs, and prompt-parsing fragility) and resolve the classic Credit Assignment Paradox in high-frequency feedback loops.
-> * **Explicit Non-Goal**: It was **not** the goal of this effort to provide a proof, blueprint, or tutorial on "how to best apply today's AI technologies to produce autonomous cyber-arcade gameplay." The arcade simulation was chosen strictly as a demanding **empirical testbed**—enforcing hard sub-$100\text{ms}$ deadlines, fatal spatial collisions, and accelerating speeds ($1.0\times\text{--}4.3\times$) where standard LLMs physically fail and fast System 1 primitives excel.
+**Deployment status:** the active local game now uses `SupportedJevAgent`: Jev receives exact state and local candidate forecasts; the existing physics shield, fallback policy, and adaptive memory remain active. Jev is the only runtime inference model. See [deployment notes](outputs/jev-supported-deployment.md).
 
-> [!NOTE]
-> **Trademark & Legal Attribution**:
-> *NeonHop 3D* is an original software title inspired by classic 1980s arcade traffic-dodging and river-crossing mechanics. It is not affiliated with, sponsored by, authorized by, or endorsed by Konami Digital Entertainment Co., Ltd. or any of its subsidiaries. All historical trademarks referenced for nominative context belong to their respective owners.
+- [Final bounded test: supported Jev results](outputs/jev-supported-final-test/report.md) — effort concluded; no further tests scheduled.
+- [Current evaluation plan](outputs/jev-evaluation-plan-2026-09-20.md)
+- [Preserved hybrid results and lessons](outputs/hybrid-preservation-2026-09-20/lessons-learned.md)
+- [First live Jev-only baseline](outputs/jev-only-live/report.md)
+- [Frozen-state pilot](outputs/jev-pilot-2026-09-20/report.md) and [provider-route comparison](outputs/jev-route-comparison-2026-09-20/report.md)
 
----
+The first live baseline produced three UP choices, three collision deaths, and zero captures. This is a narrow initial finding, not a conclusion about every use of Jev. The preserved hybrid performed substantially better in the observed session and controlled local-policy benchmarks, but those results do not establish Jev's contribution.
 
-## 🏗️ Architecture & High-Performance Design
-To guarantee a solid 60 FPS experience across desktop and mobile, this game implements several advanced engineering patterns:
-1.  **Interpolated Fixed-Timestep Loop**: Decouples physics calculations from rendering frame rates. Game state ticks run at a strict $60\text{ Hz}$. The rendering pipeline uses a temporal interpolation factor ($\alpha$) to compute exact sub-frame positions, eliminating micro-stutter on high-refresh-rate displays ($90\text{ Hz}/120\text{ Hz}$).
-2.  **Instanced Rendering**: Implements `THREE.InstancedMesh` for road cars, floating logs, and drones, consolidating hundreds of active models into single draw calls.
-3.  **Point Light Billboard Simulation**: Point lights on obstacles are replaced with flat emissive materials and additive 2D billboard sprite layers positioned slightly above the floor grid ($Y = 0.01$) to simulate reflection sweeps at zero GPU shading cost.
-4.  **Zero-Allocation Pooling**: Pre-allocates active coordinate vectors and synthesizer nodes (Voice Pooling) to completely prevent Garbage Collection (GC) pauses during gameplay.
-5.  **Look-Ahead Audio Scheduler**: Uses a "Two-Clocks" pattern to schedule Web Audio events $100\text{ ms}$ ahead of time using hardware clock timers, preventing music tempo drift during WebGL load spikes.
+## Run locally
 
----
+Requires Python 3.9+ and a browser with ES modules/WebGL. Tests also require Node.js 18+.
 
-## 🚀 Quick Start & API Key Configuration
+Create `.env` from `.env-example` if it does not already exist, then set:
 
-To run the game with live autonomous AI spectator mode powered by **TypeSafe Jev**, follow these setup steps:
-
-### 1. Configure Your API Key (.env)
-The repository includes a configuration template file [`.env-example`](.env-example). Copy it to create your local `.env` in the workspace root directory:
-```bash
-cp .env-example .env
+```dotenv
+OPENROUTER_API_KEY=your_key_here
+# Optional for direct-provider experiments:
+TYPESAFE_API_KEY=your_key_here
 ```
 
-Open `.env` in your text editor and enable **one of two supported keys**:
+The active supported controller explicitly selects OpenRouter and requests `typesafe/jev-1.13`. A TypeSafe key alone does not satisfy this controller's route. The gateway still supports explicit TypeSafe requests for separate experiments; unqualified requests retain the historical TypeSafe-first default. Explicit route failures do not switch providers. Keys stay on the server and are excluded from Git; do not copy credentials into logs or reports.
 
 ```bash
-# ------------------------------------------------------------------------------
-# PRIMARY: TypeSafe AI Direct API Key (Preferred)
-# ------------------------------------------------------------------------------
-# Direct, sub-millisecond connection to TypeSafe AI System One decision engine.
-TYPESAFE_API_KEY=your_typesafe_key_here
-
-# ------------------------------------------------------------------------------
-# SECONDARY / FALLBACK: OpenRouter.ai API Key
-# ------------------------------------------------------------------------------
-# Used if TYPESAFE_API_KEY is unset; routes queries via OpenRouter decisions API.
-OPENROUTER_API_KEY=your_openrouter_key_here
+npm start
 ```
 
-> [!IMPORTANT]
-> **Key Hierarchy & Priority**:
-> 1. **`TYPESAFE_API_KEY` (Primary)**: If defined, the server routes decision requests directly to TypeSafe AI's endpoint (`https://api.typesafe.ai/v1/systemone`) targeting `jev-latest`.
-> 2. **`OPENROUTER_API_KEY` (Secondary / Fallback)**: If `TYPESAFE_API_KEY` is not provided, the server automatically routes decisions to OpenRouter (`https://openrouter.ai/api/alpha/decisions`) targeting `typesafe/jev-1.13`.
-> 3. **In-Memory Local Fallback (Zero-Key)**: If neither key is configured or when playing offline, the autonomous agent gracefully falls back to the in-memory compiled Jev decision engine ([`src/jevEvaluator.js`](src/jevEvaluator.js)) and the Kinematic Physics Oracle ([`src/physicsOracle.js`](src/physicsOracle.js)).
->
-> **Security & Privacy Guard**:
-> Your local `.env` file is strictly ignored by [`.gitignore`](.gitignore). It will **never** be committed or published to GitHub when pushing to public repositories. Always reference [`.env-example`](.env-example) for sharing configuration examples.
+Open http://127.0.0.1:8000 on this workstation. The server loads `.env` at startup; restart it after changing credentials. There is no bundling build step. Reload the browser after source changes.
 
-### 2. Start the Server
-Run the built-in Python gateway server:
+## Current supported Jev behavior
+
+Click **WATCH JEV + LOCAL LOGIC**. The app samples a Jev request at the next idle physics boundary after a two-second gap from the preceding completion. It freezes simulation time during that request so candidate forecasts remain current, then rechecks the proposed move with the existing safety shield when it executes. Local control runs between requests. This timing differs from the former 100 ms bank-only request limit and from continuous moving-world inference.
+
+The request includes exact game rules and state plus ten-tick candidate forecasts for all five actions. The action question prefers surviving candidates, then higher progress scores. Threat, evacuation, and forward-clearance questions remain available as simultaneous telemetry. The forecasts use the same computation checked against all 30 candidates in the final bounded test.
+
+The gateway explicitly selects OpenRouter's Jev model. There is no alternate inference model or direct browser-provider fallback in this active controller. An eight-second request timeout or invalid response resumes local control and delays another Jev attempt for 30 seconds. Pause, takeover, restart, and speed changes invalidate pending proposals. The HUD identifies waiting, accepted Jev moves, local control, and safety vetoes. Game over retains the original three-second automatic restart behavior.
+
+Hybrid memory and scores are restored and preserved. Request/response, remote proposal/execution, capture/death, and cumulative attribution statistics are saved under `outputs/jev-supported-live/`; these are private local files. Routine local movements are counted rather than individually persisted. Recording failures display a warning while gameplay continues. The older raw controller remains in the source tree as a diagnostic, but is not the active entrypoint.
+
+## Verification and isolation
+
 ```bash
-python3 server.py
-```
-The server will automatically reference and load `.env` from the active workspace directory, report the active key provider in the startup console banner, and serve the application at:  
-👉 **`http://localhost:8000`**
-
-### 3. Playing & Spectating
-* **Autonomous AI Spectator Mode**: Toggle the **SPECTATOR MODE** button or click **READY** to watch the autonomous agent dodge highway traffic and traverse river streams hands-free while streaming live telemetry.
-* **Seamless Human Hand-off**: Press any Arrow key or WASD (or click **TAKE CONTROL**) at any point to instantly take control of the character.
-
----
-
-## 📂 Project Structure
-```
-├── .env-example                 # API key configuration template (TypeSafe direct / OpenRouter)
-├── package.json                 # Project manifest & ES module declaration
-├── index.html                   # HTML structure, sidebar HUD, and import maps
-├── styles.css                   # Glassmorphism, neon animations, and responsive layouts
-├── server.py                    # Lightweight Python gateway & static asset server
-├── README.md                    # Research overview, setup, and changelog (this file)
-├── docs/
-│   ├── white_paper_hybrid_neuro_symbolic_neonhop.md # Peer-reviewable white paper on hybrid neuro-symbolic control
-│   ├── jev_findings_and_lessons_learned.md          # Architectural lessons learned, Credit Assignment Paradox, and RLCD
-│   ├── walkthrough.md                               # Milestone walkthrough verifying 100 flawless runs
-│   ├── implementation_plan.md                       # Phased roadmap, multi-model allocation, and architecture
-│   └── local_model_log.md                           # Mandatory local model inference logging (LiteLLM local-model)
-└── src/
-    ├── main.js                  # Application bootstrapper [Phase 2]
-    ├── gameEngine.js            # Physics updates and grid state interpolation [Phase 2]
-    ├── jevAgent.js              # TypeSafe Jev (System One) autonomous AI spectator agent
-    ├── renderer.js              # Three.js r160 scene builder and instanced meshes [Phase 3]
-    ├── inputManager.js          # Touch-swipe & keyboard input buffer [Phase 5]
-    ├── soundEngine.js           # Voice-pooled Web Audio synthesizer & scheduler [Phase 4]
-    └── leaderboard.js           # Score serialization and localStorage system [Phase 5]
+npm test
 ```
 
----
+The current recorded suite passes 57 JavaScript and eight Python tests with mocked responses and synthetic credentials. Tests cover frozen simulation, unsafe raw action execution, WAIT/invalid moves, timeout halt, stale reply cancellation, response validation, recording failure, explicit provider routing, and private log storage, alongside prior engine/hybrid regressions.
+
+The optional `tests/browser-smoke.cjs` targets the preserved raw-controller diagnostic, not the newly deployed supported UI. It requires Playwright/Chromium and Node.js 20+. Start `python3 tests/serve-browser-fixture.py`, then supply its printed `TEST_URL` when running the script. It expects a no-key fixture, checks the error halt and retry UI, and uses synthetic responses for other assertions. Do not point it at the credential-backed server. The saved regression count above does not include this optional script; the initial live browser run was verified separately.
+
+The active entrypoint imports `src/supportedJevAgent.js`, which extends the local hybrid controller and uses `src/candidateForecasts.js`. The old agent's direct request method is overridden; the runtime request path explicitly calls Jev through the local gateway. Local physics, adaptive tables, and rules are permitted supporting logic. Codex does not supply gameplay inference.
+
+The gateway binds to loopback only. Static assets use an explicit allowlist; private files, symlinks, repository metadata, and directory listings are excluded. Decision/log POSTs require the matching local Origin, Host, and JSON content type. This is a single-workstation development service, not a public or LAN-authenticated application.
+
+## Preserved hybrid work
+
+The historical source checkpoint is `outputs/hybrid-preservation-2026-09-20/source/`. Its local autonomy benchmark uses mocked provider failures and fresh in-memory learning; it measures local control, not Jev. Run the archived `benchmarks/autonomy.mjs` from that source tree to reproduce its scenarios. Do not pool these results with Jev-only sessions.
+
+Historical pilot results have frozen engine/source snapshots. Their source-hash checks intentionally reject a changed engine; reproduce them using their archived sources rather than silently regrading against the active engine.
+
+## Source layout
+
+- `src/main.js`: application and experiment UI
+- `src/supportedJevAgent.js`: deployed Jev + local logic controller and traces
+- `src/candidateForecasts.js`: deterministic candidate outcome forecasts
+- `src/jevOnlyAgent.js`: preserved raw-controller diagnostic
+- `src/gameEngine.js`: physics, scoring, state, and freeze hooks
+- `src/renderer.js`, `soundEngine.js`, `inputManager.js`: presentation and human controls
+- `server.py`: local gateway, protected trace persistence, static assets
+- `tests/`: engine, gateway, controller, and optional browser checks
+- `benchmarks/`: historical controller and isolated Jev evaluation tools
+- `outputs/`: saved protocols, measurements, traces, and source checkpoints
+
+## Historical documentation
+
+The development history below and older files in `docs/` describe earlier architectures and claims. They are not the current experiment protocol or validated evidence of Jev's advantages. Current scope and results are in the linked plan and reports above.
 
 ## 📓 Development History & Changelog
 
@@ -196,3 +174,17 @@ For query prompts and raw responses sent to local inference models, refer to:
 
 
 
+## Reproducing the isolated Jev pilot
+
+`benchmarks/jev-evaluation.mjs` prepares a 60-state corpus and runs a bounded nine-request pilot against TypeSafe Direct. It never falls back to another model. Raw actions, deterministic local comparisons, safety vetoes, and candidate-combination abstention are logged separately. The observer game should be paused during collection; its learning memory is not used in the CLI experiment.
+
+```bash
+# No provider calls:
+node benchmarks/jev-evaluation.mjs prepare outputs/NEW-RUN
+# Nine live requests; requires a running local gateway and working TypeSafe key:
+node benchmarks/jev-evaluation.mjs pilot outputs/NEW-RUN
+# No provider calls; recomputes statistics and verifies recorded engine outcomes:
+node benchmarks/summarize-jev-pilot.mjs outputs/NEW-RUN
+```
+
+The pilot refuses an existing trace file and mismatched source/corpus hashes. Preserve failed or partial runs; use a new directory for an intentional new experiment. The saved 2026-09-20 pilot can be summarized without repeating paid requests. Its exact source snapshot is archived with the results.

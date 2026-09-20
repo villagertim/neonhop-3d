@@ -1,0 +1,36 @@
+{
+  "model": "typesafe/jev-1.13",
+  "state": "FROG STATUS: Coordinates (x=0, z=12). Zone: Sidewalk Safe Zone.\nLANE DETAILS:\n- Front Lane (z=11): Road: car(x=-9, spd=-1.2, dist=-9), car(x=-4, spd=-1.2, dist=-4), car(x=1, spd=-1.2, dist=1)\n- Current Lane (z=12): Safe resting platform (no vehicles)\n- Back Lane (z=13): Out of bounds\nGOAL: Closest open portal is at x=0 (0.0 lateral hops). Goal line is 12 hops forward.\nCOUNTDOWN TIMER: 30.0s remaining.\nLEARNED BRAIN MEMORY: RUN STATS: Streak=0/100 (Best=0). Total Runs=0, Deaths=0. LEARNED DANGER MEMORY: Known death traps mapped=0. Active speed tier=0. POLICY DIRECTIVE: Prioritize validated safe crossing windows over premature forward hops.",
+  "questions": {
+    "action": {
+      "type": "choice",
+      "instructions": "Determine the single best immediate movement for the cyber-frog to advance toward an empty goal portal (z=0) while surviving traffic, riding logs across the digital stream, and avoiding deadly obstacles or drowning:",
+      "criteria": {
+        "UP": "Hop forward toward the target portals (z decreases). Choose if the front tile is verified safe and leads toward an open portal.",
+        "DOWN": "Hop backward away from danger (z increases). Choose if trapped with no forward escape or falling off stream edge.",
+        "LEFT": "Hop left (x decreases). Choose to dodge oncoming vehicles, align with a floating log, or shift toward an unoccupied portal.",
+        "RIGHT": "Hop right (x increases). Choose to dodge oncoming vehicles, align with a floating log, or shift toward an unoccupied portal.",
+        "WAIT": "Stay in current position. Choose if current tile is safe (sidewalk, safe bank, or riding safely on a log) and moving in any direction right now would be fatal."
+      }
+    },
+    "threat_level": {
+      "type": "score",
+      "instructions": "Evaluate the immediate collision or drowning threat to the frog in its current position:",
+      "criteria": [
+        "safe",
+        "low_risk",
+        "moderate_risk",
+        "imminent_hazard",
+        "fatal_collision_imminent"
+      ]
+    },
+    "evacuate_log": {
+      "type": "noul",
+      "instructions": "Is the frog currently riding a log that is dangerously close to drifting off the screen boundaries (|x| > 4.8) requiring an immediate jump off?"
+    },
+    "forward_path_clear": {
+      "type": "noul",
+      "instructions": "Is the lane or tile directly ahead (z-1) verified safe from incoming vehicle collisions or drowning?"
+    }
+  }
+}

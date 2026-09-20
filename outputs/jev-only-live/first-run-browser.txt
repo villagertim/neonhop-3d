@@ -1,0 +1,65 @@
+Browser tab: 3, Title: "NeonHop 3D / Afterdark", URL: "http://127.0.0.1:8000/".
+1 AXWebArea NeonHop 3D / Afterdark, URL: 127.0.0.1:8000/
+	2 container app-container
+		3 container sidebar
+			4 container
+				5 heading NEONHOP 3D, Value: 1
+					6 text NEONHOP 3D
+				7 heading AFTERDARK, Value: 2
+					8 text AFTERDARK
+			9 container
+				10 text SCORE
+				80 text 000000
+				12 text SESSION HIGH
+				81 text 000000
+				14 text LIVES
+				15 text LEVEL
+				82 text 1
+		17 container game-stage
+			18 container canvas-wrapper
+				19 image game-canvas
+				45 container ai-telemetry-hud
+					46 text JEV ONLY · BASELINE
+					47 button TAKE CONTROL, Help: Take player control, ID: btn-take-control
+					48 text DECISION (CHOICE)
+					66 text FINISHED
+					50 text THREAT (SCORE)
+					67 text UNKNOWN
+					52 text EVAC LOG (NOUL)
+					68 text —
+					54 text FWD CLEAR (NOUL)
+					69 text —
+					56 text SESSION CAPTURES / DEATHS
+					70 text 0 / 3
+					71 text Jev-only · simulation freezes during requests
+					72 text ENGINE: JEV ONLY
+					73 text DECISION DELAY: 556 ms
+					74 text DECISIONS: 3
+				20 container
+					62 text NEONHOP 3D / AFTERDARK
+					22 heading CROSS THE NIGHT, Value: 2
+						23 text CROSS THE NIGHT
+					24 text CHOOSE YOUR PLAYSTYLE
+					25 button START GAME, ID: btn-start-game
+					26 button WATCH JEV ONLY, ID: btn-watch-ai
+				27 container
+					28 text NEONHOP 3D / AFTERDARK
+					29 heading PAUSED, Value: 2
+						30 text PAUSED
+					31 text PRESS ESC TO RESUME
+				32 container
+					75 text NEONHOP 3D / AFTERDARK
+					34 heading GAME OVER, Value: 2
+						35 text GAME OVER
+					76 container high-score-form
+						77 text NEW HIGH SCORE!
+						78 text field (settable) player-initials
+						79 button SUBMIT, ID: btn-submit-score
+					36 text PRESS ENTER TO RESTART
+			37 container touch-controls
+				38 button ▲, ID: pad-up
+				39 button ◀, ID: pad-left
+				40 button ▶, ID: pad-right
+				41 button ▼, ID: pad-down
+
+The focused UI element is 26 button WATCH JEV ONLY, ID: btn-watch-ai

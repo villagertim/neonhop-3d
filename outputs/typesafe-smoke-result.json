@@ -1,0 +1,56 @@
+{
+  "checked_at": "2026-09-20T18:16:09.162920+00:00",
+  "provider": "typesafe",
+  "purpose": "single live integration smoke check",
+  "requests": 1,
+  "status": 200,
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "action": {
+        "type": "choice",
+        "choice": "WAIT",
+        "confidence": 0.66,
+        "probabilities": {
+          "DOWN": 0.01,
+          "UP": 0.23,
+          "RIGHT": 0.01,
+          "LEFT": 0.02,
+          "WAIT": 0.73
+        }
+      },
+      "threat_level": {
+        "type": "score",
+        "score": 0.12,
+        "confidence": 0.9,
+        "legend": {
+          "0": "safe",
+          "1": "low_risk",
+          "2": "moderate_risk",
+          "3": "imminent_hazard",
+          "4": "fatal_collision_imminent"
+        },
+        "probabilities": {
+          "0": 0.95,
+          "1": 0.02,
+          "2": 0.01,
+          "3": 0.01,
+          "4": 0.01
+        }
+      },
+      "evacuate_log": {
+        "type": "noul",
+        "noul": 0.02
+      },
+      "forward_path_clear": {
+        "type": "noul",
+        "noul": 0.17
+      }
+    },
+    "usage": {
+      "input_tokens": 887,
+      "output_tokens": 105
+    }
+  },
+  "roundtrip_ms": 1384.87
+}

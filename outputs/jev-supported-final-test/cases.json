@@ -1,0 +1,4340 @@
+[
+  {
+    "id": "trajectory-0-tick-0",
+    "zone": "bank",
+    "upSafe": false,
+    "snapshot": {
+      "level": 1,
+      "lives": 3,
+      "player": {
+        "prevPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 12
+        },
+        "currPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 12
+        },
+        "targetPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 12
+        },
+        "isHopping": false,
+        "hopProgress": 0,
+        "hopSpeed": 8,
+        "deathType": null
+      },
+      "obstacles": [
+        {
+          "id": 0,
+          "laneZ": 11,
+          "x": -9,
+          "prevX": -9,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 1,
+          "laneZ": 11,
+          "x": -4,
+          "prevX": -4,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 2,
+          "laneZ": 11,
+          "x": 1,
+          "prevX": 1,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 3,
+          "laneZ": 10,
+          "x": -9,
+          "prevX": -9,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 4,
+          "laneZ": 10,
+          "x": -3.5,
+          "prevX": -3.5,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 5,
+          "laneZ": 10,
+          "x": 2,
+          "prevX": 2,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 6,
+          "laneZ": 9,
+          "x": -9,
+          "prevX": -9,
+          "speed": -1.8,
+          "length": 2,
+          "type": "car"
+        },
+        {
+          "id": 7,
+          "laneZ": 9,
+          "x": -1,
+          "prevX": -1,
+          "speed": -1.8,
+          "length": 2,
+          "type": "car"
+        },
+        {
+          "id": 8,
+          "laneZ": 8,
+          "x": -9,
+          "prevX": -9,
+          "speed": 2.2,
+          "length": 3,
+          "type": "truck"
+        },
+        {
+          "id": 9,
+          "laneZ": 8,
+          "x": 0,
+          "prevX": 0,
+          "speed": 2.2,
+          "length": 3,
+          "type": "truck"
+        },
+        {
+          "id": 10,
+          "laneZ": 7,
+          "x": -9,
+          "prevX": -9,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 11,
+          "laneZ": 7,
+          "x": -4,
+          "prevX": -4,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 12,
+          "laneZ": 7,
+          "x": 1,
+          "prevX": 1,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 13,
+          "laneZ": 5,
+          "x": -9,
+          "prevX": -9,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 14,
+          "laneZ": 5,
+          "x": -3.5,
+          "prevX": -3.5,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 15,
+          "laneZ": 5,
+          "x": 2,
+          "prevX": 2,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 16,
+          "laneZ": 4,
+          "x": -9,
+          "prevX": -9,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 17,
+          "laneZ": 4,
+          "x": -4,
+          "prevX": -4,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 18,
+          "laneZ": 4,
+          "x": 1,
+          "prevX": 1,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 19,
+          "laneZ": 3,
+          "x": -9,
+          "prevX": -9,
+          "speed": 1.6,
+          "length": 4.5,
+          "type": "log"
+        },
+        {
+          "id": 20,
+          "laneZ": 3,
+          "x": -1,
+          "prevX": -1,
+          "speed": 1.6,
+          "length": 4.5,
+          "type": "log"
+        },
+        {
+          "id": 21,
+          "laneZ": 2,
+          "x": -9,
+          "prevX": -9,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 22,
+          "laneZ": 2,
+          "x": -3.5,
+          "prevX": -3.5,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 23,
+          "laneZ": 2,
+          "x": 2,
+          "prevX": 2,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 24,
+          "laneZ": 1,
+          "x": -9,
+          "prevX": -9,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 25,
+          "laneZ": 1,
+          "x": -4,
+          "prevX": -4,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 26,
+          "laneZ": 1,
+          "x": 1,
+          "prevX": 1,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        }
+      ],
+      "portals": [
+        {
+          "x": -4,
+          "filled": false
+        },
+        {
+          "x": -2,
+          "filled": false
+        },
+        {
+          "x": 0,
+          "filled": false
+        },
+        {
+          "x": 2,
+          "filled": false
+        },
+        {
+          "x": 4,
+          "filled": false
+        }
+      ],
+      "countdownTimer": 30,
+      "fixedDeltaTime": 0.016666666666666666,
+      "simulationSpeed": 1
+    },
+    "state": {
+      "rules": {
+        "objective": "Survive and reach an empty portal at z=0. Prefer useful forward progress when safe; waiting can allow traffic or logs to align.",
+        "dtSeconds": 0.016666666666666666,
+        "hopSpeed": 8,
+        "horizonTicks": 10,
+        "timing": "The snapshot is immediately before a physics tick. Each tick reduces countdown, moves obstacles, then processes the frog. On the first tick a grounded road collision kills before input. A legal command starts a hop; hop progress starts increasing on the following tick by dt*hopSpeed until >=1. At hopSpeed=8 it lands after eight further ticks. No drift during hopping or on the landing tick. No further commands during the horizon. WAIT remains grounded for all ten ticks.",
+        "obstacles": "x += speed*dt on every tick. After moving past x=9.5 to the right, set x=-9.5; after moving past -9.5 to the left, set x=9.5. Speeds are signed units per simulated second.",
+        "movement": "UP decreases z by 1 if z>0; DOWN increases z by 1 if z<12; LEFT decreases x by 1 only if current x>-5; RIGHT increases x by 1 only if current x<5. WAIT is always a legal command. An illegal move is not a safe candidate even if the frog survives staying still.",
+        "roads": "Rows z=7..11. Grounded/landing collision when abs(frog.x-obstacle.x) <= obstacle.length/2 + 0.20. No airborne collisions.",
+        "river": "Rows z=1..5. At landing or while idle, a log must satisfy abs(frog.x-log.x) <= log.length/2 + 0.20 or the frog drowns. When idle, test overlap after log movement then carry frog by log.speed*dt. Carried x outside [-6.5,6.5] is fatal.",
+        "banks": "Rows z=12 and z=6 have no traffic or river hazards.",
+        "portals": "At z=0, abs(frog.x-portal.x) must be strictly <0.5 and portal must be unfilled; otherwise fatal. Capturing ends the evaluation successfully.",
+        "timeout": "Countdown reaching zero is fatal."
+      },
+      "level": 1,
+      "countdownSeconds": 30,
+      "player": {
+        "prevPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 12
+        },
+        "currPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 12
+        },
+        "targetPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 12
+        },
+        "isHopping": false,
+        "hopProgress": 0,
+        "hopSpeed": 8,
+        "deathType": null
+      },
+      "obstacles": [
+        {
+          "id": 0,
+          "laneZ": 11,
+          "x": -9,
+          "prevX": -9,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 1,
+          "laneZ": 11,
+          "x": -4,
+          "prevX": -4,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 2,
+          "laneZ": 11,
+          "x": 1,
+          "prevX": 1,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 3,
+          "laneZ": 10,
+          "x": -9,
+          "prevX": -9,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 4,
+          "laneZ": 10,
+          "x": -3.5,
+          "prevX": -3.5,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 5,
+          "laneZ": 10,
+          "x": 2,
+          "prevX": 2,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 6,
+          "laneZ": 9,
+          "x": -9,
+          "prevX": -9,
+          "speed": -1.8,
+          "length": 2,
+          "type": "car"
+        },
+        {
+          "id": 7,
+          "laneZ": 9,
+          "x": -1,
+          "prevX": -1,
+          "speed": -1.8,
+          "length": 2,
+          "type": "car"
+        },
+        {
+          "id": 8,
+          "laneZ": 8,
+          "x": -9,
+          "prevX": -9,
+          "speed": 2.2,
+          "length": 3,
+          "type": "truck"
+        },
+        {
+          "id": 9,
+          "laneZ": 8,
+          "x": 0,
+          "prevX": 0,
+          "speed": 2.2,
+          "length": 3,
+          "type": "truck"
+        },
+        {
+          "id": 10,
+          "laneZ": 7,
+          "x": -9,
+          "prevX": -9,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 11,
+          "laneZ": 7,
+          "x": -4,
+          "prevX": -4,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 12,
+          "laneZ": 7,
+          "x": 1,
+          "prevX": 1,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 13,
+          "laneZ": 5,
+          "x": -9,
+          "prevX": -9,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 14,
+          "laneZ": 5,
+          "x": -3.5,
+          "prevX": -3.5,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 15,
+          "laneZ": 5,
+          "x": 2,
+          "prevX": 2,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 16,
+          "laneZ": 4,
+          "x": -9,
+          "prevX": -9,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 17,
+          "laneZ": 4,
+          "x": -4,
+          "prevX": -4,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 18,
+          "laneZ": 4,
+          "x": 1,
+          "prevX": 1,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 19,
+          "laneZ": 3,
+          "x": -9,
+          "prevX": -9,
+          "speed": 1.6,
+          "length": 4.5,
+          "type": "log"
+        },
+        {
+          "id": 20,
+          "laneZ": 3,
+          "x": -1,
+          "prevX": -1,
+          "speed": 1.6,
+          "length": 4.5,
+          "type": "log"
+        },
+        {
+          "id": 21,
+          "laneZ": 2,
+          "x": -9,
+          "prevX": -9,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 22,
+          "laneZ": 2,
+          "x": -3.5,
+          "prevX": -3.5,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 23,
+          "laneZ": 2,
+          "x": 2,
+          "prevX": 2,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 24,
+          "laneZ": 1,
+          "x": -9,
+          "prevX": -9,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 25,
+          "laneZ": 1,
+          "x": -4,
+          "prevX": -4,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 26,
+          "laneZ": 1,
+          "x": 1,
+          "prevX": 1,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        }
+      ],
+      "portals": [
+        {
+          "x": -4,
+          "filled": false
+        },
+        {
+          "x": -2,
+          "filled": false
+        },
+        {
+          "x": 0,
+          "filled": false
+        },
+        {
+          "x": 2,
+          "filled": false
+        },
+        {
+          "x": 4,
+          "filled": false
+        }
+      ]
+    },
+    "candidates": {
+      "UP": {
+        "requestedAction": "UP",
+        "executedAction": "UP",
+        "accepted": true,
+        "vetoed": false,
+        "safe": false,
+        "death": "crash",
+        "captures": 0,
+        "rowGain": 0,
+        "progressScore": 0,
+        "ticks": 9,
+        "finalPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 12
+        }
+      },
+      "DOWN": {
+        "requestedAction": "DOWN",
+        "executedAction": "DOWN",
+        "accepted": false,
+        "vetoed": false,
+        "safe": false,
+        "death": null,
+        "captures": 0,
+        "rowGain": 0,
+        "progressScore": 0,
+        "ticks": 10,
+        "finalPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 12
+        }
+      },
+      "LEFT": {
+        "requestedAction": "LEFT",
+        "executedAction": "LEFT",
+        "accepted": true,
+        "vetoed": false,
+        "safe": true,
+        "death": null,
+        "captures": 0,
+        "rowGain": 0,
+        "progressScore": 2,
+        "ticks": 10,
+        "finalPosition": {
+          "x": -1,
+          "y": 0,
+          "z": 12
+        }
+      },
+      "RIGHT": {
+        "requestedAction": "RIGHT",
+        "executedAction": "RIGHT",
+        "accepted": true,
+        "vetoed": false,
+        "safe": true,
+        "death": null,
+        "captures": 0,
+        "rowGain": 0,
+        "progressScore": 1,
+        "ticks": 10,
+        "finalPosition": {
+          "x": 1,
+          "y": 0,
+          "z": 12
+        }
+      },
+      "WAIT": {
+        "requestedAction": "WAIT",
+        "executedAction": "WAIT",
+        "accepted": true,
+        "vetoed": false,
+        "safe": true,
+        "death": null,
+        "captures": 0,
+        "rowGain": 0,
+        "progressScore": 1,
+        "ticks": 10,
+        "finalPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 12
+        }
+      }
+    },
+    "local": {
+      "requestedAction": "LOCAL",
+      "executedAction": "WAIT",
+      "accepted": true,
+      "vetoed": false,
+      "safe": true,
+      "death": null,
+      "captures": 0,
+      "rowGain": 0,
+      "progressScore": 1,
+      "ticks": 10,
+      "finalPosition": {
+        "x": 0,
+        "y": 0,
+        "z": 12
+      }
+    },
+    "questions": {
+      "action": {
+        "type": "choice",
+        "instructions": "Select a legal action that survives the ten-tick horizon and makes useful progress toward an open portal. If local candidate predictions are supplied, use them: prefer surviving candidates, then higher progressScore. A prediction is computed by local game physics, not another model. Return your chosen action.",
+        "criteria": {
+          "UP": "UP",
+          "DOWN": "DOWN",
+          "LEFT": "LEFT",
+          "RIGHT": "RIGHT",
+          "WAIT": "WAIT"
+        }
+      }
+    }
+  },
+  {
+    "id": "trajectory-0-tick-1504",
+    "zone": "bank",
+    "upSafe": true,
+    "snapshot": {
+      "level": 1,
+      "lives": 3,
+      "player": {
+        "prevPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 12
+        },
+        "currPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 12
+        },
+        "targetPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 12
+        },
+        "isHopping": false,
+        "hopProgress": 0,
+        "hopSpeed": 8,
+        "deathType": null
+      },
+      "obstacles": [
+        {
+          "id": 0,
+          "laneZ": 11,
+          "x": -1.0399999999998866,
+          "prevX": -1.0199999999998866,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 1,
+          "laneZ": 11,
+          "x": 3.960000000000117,
+          "prevX": 3.980000000000117,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 2,
+          "laneZ": 11,
+          "x": 8.960000000000012,
+          "prevX": 8.980000000000011,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 3,
+          "laneZ": 10,
+          "x": -9.399999999999999,
+          "prevX": -9.424999999999999,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 4,
+          "laneZ": 10,
+          "x": -3.8999999999999226,
+          "prevX": -3.9249999999999226,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 5,
+          "laneZ": 10,
+          "x": 1.6000000000000663,
+          "prevX": 1.5750000000000663,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 6,
+          "laneZ": 9,
+          "x": 2.930000000000006,
+          "prevX": 2.9600000000000057,
+          "speed": -1.8,
+          "length": 2,
+          "type": "car"
+        },
+        {
+          "id": 7,
+          "laneZ": 9,
+          "x": -8.080000000000009,
+          "prevX": -8.05000000000001,
+          "speed": -1.8,
+          "length": 2,
+          "type": "car"
+        },
+        {
+          "id": 8,
+          "laneZ": 8,
+          "x": 8.100000000000097,
+          "prevX": 8.06333333333343,
+          "speed": 2.2,
+          "length": 3,
+          "type": "truck"
+        },
+        {
+          "id": 9,
+          "laneZ": 8,
+          "x": -1.946666666666609,
+          "prevX": -1.9833333333332757,
+          "speed": 2.2,
+          "length": 3,
+          "type": "truck"
+        },
+        {
+          "id": 10,
+          "laneZ": 7,
+          "x": -6.063333333333387,
+          "prevX": -6.040000000000053,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 11,
+          "laneZ": 7,
+          "x": -1.0700000000000336,
+          "prevX": -1.0466666666667002,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 12,
+          "laneZ": 7,
+          "x": 3.9233333333333107,
+          "prevX": 3.946666666666644,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 13,
+          "laneZ": 5,
+          "x": -0.4433333333333247,
+          "prevX": -0.461666666666658,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 14,
+          "laneZ": 5,
+          "x": 5.056666666666707,
+          "prevX": 5.038333333333373,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 15,
+          "laneZ": 5,
+          "x": -8.45500000000004,
+          "prevX": -8.473333333333372,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 16,
+          "laneZ": 4,
+          "x": -3.564999999999938,
+          "prevX": -3.5433333333332717,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 17,
+          "laneZ": 4,
+          "x": 1.4183333333333892,
+          "prevX": 1.440000000000056,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 18,
+          "laneZ": 4,
+          "x": 6.423333333333357,
+          "prevX": 6.445000000000023,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 19,
+          "laneZ": 3,
+          "x": -6.91333333333331,
+          "prevX": -6.939999999999976,
+          "speed": 1.6,
+          "length": 4.5,
+          "type": "log"
+        },
+        {
+          "id": 20,
+          "laneZ": 3,
+          "x": 1.0866666666666693,
+          "prevX": 1.0600000000000027,
+          "speed": 1.6,
+          "length": 4.5,
+          "type": "log"
+        },
+        {
+          "id": 21,
+          "laneZ": 2,
+          "x": 6.454999999999977,
+          "prevX": 6.469999999999977,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 22,
+          "laneZ": 2,
+          "x": -7.044999999999928,
+          "prevX": -7.029999999999928,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 23,
+          "laneZ": 2,
+          "x": -1.554999999999979,
+          "prevX": -1.5399999999999792,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 24,
+          "laneZ": 1,
+          "x": 7.090000000000058,
+          "prevX": 7.066666666666724,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 25,
+          "laneZ": 1,
+          "x": -6.933333333333323,
+          "prevX": -6.956666666666656,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 26,
+          "laneZ": 1,
+          "x": -1.9399999999999693,
+          "prevX": -1.9633333333333027,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        }
+      ],
+      "portals": [
+        {
+          "x": -4,
+          "filled": false
+        },
+        {
+          "x": -2,
+          "filled": true
+        },
+        {
+          "x": 0,
+          "filled": true
+        },
+        {
+          "x": 2,
+          "filled": false
+        },
+        {
+          "x": 4,
+          "filled": false
+        }
+      ],
+      "countdownTimer": 30,
+      "fixedDeltaTime": 0.016666666666666666,
+      "simulationSpeed": 1
+    },
+    "state": {
+      "rules": {
+        "objective": "Survive and reach an empty portal at z=0. Prefer useful forward progress when safe; waiting can allow traffic or logs to align.",
+        "dtSeconds": 0.016666666666666666,
+        "hopSpeed": 8,
+        "horizonTicks": 10,
+        "timing": "The snapshot is immediately before a physics tick. Each tick reduces countdown, moves obstacles, then processes the frog. On the first tick a grounded road collision kills before input. A legal command starts a hop; hop progress starts increasing on the following tick by dt*hopSpeed until >=1. At hopSpeed=8 it lands after eight further ticks. No drift during hopping or on the landing tick. No further commands during the horizon. WAIT remains grounded for all ten ticks.",
+        "obstacles": "x += speed*dt on every tick. After moving past x=9.5 to the right, set x=-9.5; after moving past -9.5 to the left, set x=9.5. Speeds are signed units per simulated second.",
+        "movement": "UP decreases z by 1 if z>0; DOWN increases z by 1 if z<12; LEFT decreases x by 1 only if current x>-5; RIGHT increases x by 1 only if current x<5. WAIT is always a legal command. An illegal move is not a safe candidate even if the frog survives staying still.",
+        "roads": "Rows z=7..11. Grounded/landing collision when abs(frog.x-obstacle.x) <= obstacle.length/2 + 0.20. No airborne collisions.",
+        "river": "Rows z=1..5. At landing or while idle, a log must satisfy abs(frog.x-log.x) <= log.length/2 + 0.20 or the frog drowns. When idle, test overlap after log movement then carry frog by log.speed*dt. Carried x outside [-6.5,6.5] is fatal.",
+        "banks": "Rows z=12 and z=6 have no traffic or river hazards.",
+        "portals": "At z=0, abs(frog.x-portal.x) must be strictly <0.5 and portal must be unfilled; otherwise fatal. Capturing ends the evaluation successfully.",
+        "timeout": "Countdown reaching zero is fatal."
+      },
+      "level": 1,
+      "countdownSeconds": 30,
+      "player": {
+        "prevPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 12
+        },
+        "currPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 12
+        },
+        "targetPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 12
+        },
+        "isHopping": false,
+        "hopProgress": 0,
+        "hopSpeed": 8,
+        "deathType": null
+      },
+      "obstacles": [
+        {
+          "id": 0,
+          "laneZ": 11,
+          "x": -1.0399999999998866,
+          "prevX": -1.0199999999998866,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 1,
+          "laneZ": 11,
+          "x": 3.960000000000117,
+          "prevX": 3.980000000000117,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 2,
+          "laneZ": 11,
+          "x": 8.960000000000012,
+          "prevX": 8.980000000000011,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 3,
+          "laneZ": 10,
+          "x": -9.399999999999999,
+          "prevX": -9.424999999999999,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 4,
+          "laneZ": 10,
+          "x": -3.8999999999999226,
+          "prevX": -3.9249999999999226,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 5,
+          "laneZ": 10,
+          "x": 1.6000000000000663,
+          "prevX": 1.5750000000000663,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 6,
+          "laneZ": 9,
+          "x": 2.930000000000006,
+          "prevX": 2.9600000000000057,
+          "speed": -1.8,
+          "length": 2,
+          "type": "car"
+        },
+        {
+          "id": 7,
+          "laneZ": 9,
+          "x": -8.080000000000009,
+          "prevX": -8.05000000000001,
+          "speed": -1.8,
+          "length": 2,
+          "type": "car"
+        },
+        {
+          "id": 8,
+          "laneZ": 8,
+          "x": 8.100000000000097,
+          "prevX": 8.06333333333343,
+          "speed": 2.2,
+          "length": 3,
+          "type": "truck"
+        },
+        {
+          "id": 9,
+          "laneZ": 8,
+          "x": -1.946666666666609,
+          "prevX": -1.9833333333332757,
+          "speed": 2.2,
+          "length": 3,
+          "type": "truck"
+        },
+        {
+          "id": 10,
+          "laneZ": 7,
+          "x": -6.063333333333387,
+          "prevX": -6.040000000000053,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 11,
+          "laneZ": 7,
+          "x": -1.0700000000000336,
+          "prevX": -1.0466666666667002,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 12,
+          "laneZ": 7,
+          "x": 3.9233333333333107,
+          "prevX": 3.946666666666644,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 13,
+          "laneZ": 5,
+          "x": -0.4433333333333247,
+          "prevX": -0.461666666666658,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 14,
+          "laneZ": 5,
+          "x": 5.056666666666707,
+          "prevX": 5.038333333333373,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 15,
+          "laneZ": 5,
+          "x": -8.45500000000004,
+          "prevX": -8.473333333333372,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 16,
+          "laneZ": 4,
+          "x": -3.564999999999938,
+          "prevX": -3.5433333333332717,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 17,
+          "laneZ": 4,
+          "x": 1.4183333333333892,
+          "prevX": 1.440000000000056,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 18,
+          "laneZ": 4,
+          "x": 6.423333333333357,
+          "prevX": 6.445000000000023,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 19,
+          "laneZ": 3,
+          "x": -6.91333333333331,
+          "prevX": -6.939999999999976,
+          "speed": 1.6,
+          "length": 4.5,
+          "type": "log"
+        },
+        {
+          "id": 20,
+          "laneZ": 3,
+          "x": 1.0866666666666693,
+          "prevX": 1.0600000000000027,
+          "speed": 1.6,
+          "length": 4.5,
+          "type": "log"
+        },
+        {
+          "id": 21,
+          "laneZ": 2,
+          "x": 6.454999999999977,
+          "prevX": 6.469999999999977,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 22,
+          "laneZ": 2,
+          "x": -7.044999999999928,
+          "prevX": -7.029999999999928,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 23,
+          "laneZ": 2,
+          "x": -1.554999999999979,
+          "prevX": -1.5399999999999792,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 24,
+          "laneZ": 1,
+          "x": 7.090000000000058,
+          "prevX": 7.066666666666724,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 25,
+          "laneZ": 1,
+          "x": -6.933333333333323,
+          "prevX": -6.956666666666656,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 26,
+          "laneZ": 1,
+          "x": -1.9399999999999693,
+          "prevX": -1.9633333333333027,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        }
+      ],
+      "portals": [
+        {
+          "x": -4,
+          "filled": false
+        },
+        {
+          "x": -2,
+          "filled": true
+        },
+        {
+          "x": 0,
+          "filled": true
+        },
+        {
+          "x": 2,
+          "filled": false
+        },
+        {
+          "x": 4,
+          "filled": false
+        }
+      ]
+    },
+    "candidates": {
+      "UP": {
+        "requestedAction": "UP",
+        "executedAction": "UP",
+        "accepted": true,
+        "vetoed": false,
+        "safe": true,
+        "death": null,
+        "captures": 0,
+        "rowGain": 1,
+        "progressScore": 3,
+        "ticks": 10,
+        "finalPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 11
+        }
+      },
+      "DOWN": {
+        "requestedAction": "DOWN",
+        "executedAction": "DOWN",
+        "accepted": false,
+        "vetoed": false,
+        "safe": false,
+        "death": null,
+        "captures": 0,
+        "rowGain": 0,
+        "progressScore": 0,
+        "ticks": 10,
+        "finalPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 12
+        }
+      },
+      "LEFT": {
+        "requestedAction": "LEFT",
+        "executedAction": "LEFT",
+        "accepted": true,
+        "vetoed": false,
+        "safe": true,
+        "death": null,
+        "captures": 0,
+        "rowGain": 0,
+        "progressScore": 1,
+        "ticks": 10,
+        "finalPosition": {
+          "x": -1,
+          "y": 0,
+          "z": 12
+        }
+      },
+      "RIGHT": {
+        "requestedAction": "RIGHT",
+        "executedAction": "RIGHT",
+        "accepted": true,
+        "vetoed": false,
+        "safe": true,
+        "death": null,
+        "captures": 0,
+        "rowGain": 0,
+        "progressScore": 2,
+        "ticks": 10,
+        "finalPosition": {
+          "x": 1,
+          "y": 0,
+          "z": 12
+        }
+      },
+      "WAIT": {
+        "requestedAction": "WAIT",
+        "executedAction": "WAIT",
+        "accepted": true,
+        "vetoed": false,
+        "safe": true,
+        "death": null,
+        "captures": 0,
+        "rowGain": 0,
+        "progressScore": 2,
+        "ticks": 10,
+        "finalPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 12
+        }
+      }
+    },
+    "local": {
+      "requestedAction": "LOCAL",
+      "executedAction": "UP",
+      "accepted": true,
+      "vetoed": false,
+      "safe": true,
+      "death": null,
+      "captures": 0,
+      "rowGain": 1,
+      "progressScore": 3,
+      "ticks": 10,
+      "finalPosition": {
+        "x": 0,
+        "y": 0,
+        "z": 11
+      }
+    },
+    "questions": {
+      "action": {
+        "type": "choice",
+        "instructions": "Select a legal action that survives the ten-tick horizon and makes useful progress toward an open portal. If local candidate predictions are supplied, use them: prefer surviving candidates, then higher progressScore. A prediction is computed by local game physics, not another model. Return your chosen action.",
+        "criteria": {
+          "UP": "UP",
+          "DOWN": "DOWN",
+          "LEFT": "LEFT",
+          "RIGHT": "RIGHT",
+          "WAIT": "WAIT"
+        }
+      }
+    }
+  },
+  {
+    "id": "trajectory-0-tick-106",
+    "zone": "road",
+    "upSafe": false,
+    "snapshot": {
+      "level": 1,
+      "lives": 3,
+      "player": {
+        "prevPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 11.000790913580246
+        },
+        "currPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 11
+        },
+        "targetPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 11
+        },
+        "isHopping": false,
+        "hopProgress": 0,
+        "hopSpeed": 8,
+        "deathType": null
+      },
+      "obstacles": [
+        {
+          "id": 0,
+          "laneZ": 11,
+          "x": 7.900000000000034,
+          "prevX": 7.920000000000034,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 1,
+          "laneZ": 11,
+          "x": -6.119999999999955,
+          "prevX": -6.099999999999955,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 2,
+          "laneZ": 11,
+          "x": -1.1200000000000012,
+          "prevX": -1.1000000000000012,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 3,
+          "laneZ": 10,
+          "x": -6.349999999999962,
+          "prevX": -6.374999999999963,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 4,
+          "laneZ": 10,
+          "x": -0.8500000000000087,
+          "prevX": -0.8750000000000088,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 5,
+          "laneZ": 10,
+          "x": 4.650000000000002,
+          "prevX": 4.625000000000002,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 6,
+          "laneZ": 9,
+          "x": 6.830000000000022,
+          "prevX": 6.8600000000000225,
+          "speed": -1.8,
+          "length": 2,
+          "type": "car"
+        },
+        {
+          "id": 7,
+          "laneZ": 9,
+          "x": -4.179999999999989,
+          "prevX": -4.149999999999989,
+          "speed": -1.8,
+          "length": 2,
+          "type": "car"
+        },
+        {
+          "id": 8,
+          "laneZ": 8,
+          "x": -5.113333333333291,
+          "prevX": -5.149999999999958,
+          "speed": 2.2,
+          "length": 3,
+          "type": "truck"
+        },
+        {
+          "id": 9,
+          "laneZ": 8,
+          "x": 3.886666666666663,
+          "prevX": 3.8499999999999965,
+          "speed": 2.2,
+          "length": 3,
+          "type": "truck"
+        },
+        {
+          "id": 10,
+          "laneZ": 7,
+          "x": 7.539999999999992,
+          "prevX": 7.5633333333333255,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 11,
+          "laneZ": 7,
+          "x": -6.473333333333343,
+          "prevX": -6.45000000000001,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 12,
+          "laneZ": 7,
+          "x": -1.473333333333334,
+          "prevX": -1.4500000000000006,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 13,
+          "laneZ": 5,
+          "x": -7.056666666666693,
+          "prevX": -7.075000000000027,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 14,
+          "laneZ": 5,
+          "x": -1.5566666666666509,
+          "prevX": -1.5749999999999842,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 15,
+          "laneZ": 5,
+          "x": 3.9433333333333547,
+          "prevX": 3.925000000000021,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 16,
+          "laneZ": 4,
+          "x": 7.723333333333347,
+          "prevX": 7.745000000000013,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 17,
+          "laneZ": 4,
+          "x": -6.296666666666649,
+          "prevX": -6.274999999999983,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 18,
+          "laneZ": 4,
+          "x": -1.29666666666667,
+          "prevX": -1.2750000000000032,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 19,
+          "laneZ": 3,
+          "x": -6.173333333333329,
+          "prevX": -6.199999999999996,
+          "speed": 1.6,
+          "length": 4.5,
+          "type": "log"
+        },
+        {
+          "id": 20,
+          "laneZ": 3,
+          "x": 1.8266666666666636,
+          "prevX": 1.799999999999997,
+          "speed": 1.6,
+          "length": 4.5,
+          "type": "log"
+        },
+        {
+          "id": 21,
+          "laneZ": 2,
+          "x": 8.419999999999959,
+          "prevX": 8.43499999999996,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 22,
+          "laneZ": 2,
+          "x": -5.089999999999981,
+          "prevX": -5.0749999999999815,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 23,
+          "laneZ": 2,
+          "x": 0.4100000000000059,
+          "prevX": 0.42500000000000593,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 24,
+          "laneZ": 1,
+          "x": -6.526666666666657,
+          "prevX": -6.54999999999999,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 25,
+          "laneZ": 1,
+          "x": -1.5266666666666566,
+          "prevX": -1.54999999999999,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 26,
+          "laneZ": 1,
+          "x": 3.4733333333333434,
+          "prevX": 3.45000000000001,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        }
+      ],
+      "portals": [
+        {
+          "x": -4,
+          "filled": false
+        },
+        {
+          "x": -2,
+          "filled": false
+        },
+        {
+          "x": 0,
+          "filled": false
+        },
+        {
+          "x": 2,
+          "filled": false
+        },
+        {
+          "x": 4,
+          "filled": false
+        }
+      ],
+      "countdownTimer": 28.233333333333434,
+      "fixedDeltaTime": 0.016666666666666666,
+      "simulationSpeed": 1
+    },
+    "state": {
+      "rules": {
+        "objective": "Survive and reach an empty portal at z=0. Prefer useful forward progress when safe; waiting can allow traffic or logs to align.",
+        "dtSeconds": 0.016666666666666666,
+        "hopSpeed": 8,
+        "horizonTicks": 10,
+        "timing": "The snapshot is immediately before a physics tick. Each tick reduces countdown, moves obstacles, then processes the frog. On the first tick a grounded road collision kills before input. A legal command starts a hop; hop progress starts increasing on the following tick by dt*hopSpeed until >=1. At hopSpeed=8 it lands after eight further ticks. No drift during hopping or on the landing tick. No further commands during the horizon. WAIT remains grounded for all ten ticks.",
+        "obstacles": "x += speed*dt on every tick. After moving past x=9.5 to the right, set x=-9.5; after moving past -9.5 to the left, set x=9.5. Speeds are signed units per simulated second.",
+        "movement": "UP decreases z by 1 if z>0; DOWN increases z by 1 if z<12; LEFT decreases x by 1 only if current x>-5; RIGHT increases x by 1 only if current x<5. WAIT is always a legal command. An illegal move is not a safe candidate even if the frog survives staying still.",
+        "roads": "Rows z=7..11. Grounded/landing collision when abs(frog.x-obstacle.x) <= obstacle.length/2 + 0.20. No airborne collisions.",
+        "river": "Rows z=1..5. At landing or while idle, a log must satisfy abs(frog.x-log.x) <= log.length/2 + 0.20 or the frog drowns. When idle, test overlap after log movement then carry frog by log.speed*dt. Carried x outside [-6.5,6.5] is fatal.",
+        "banks": "Rows z=12 and z=6 have no traffic or river hazards.",
+        "portals": "At z=0, abs(frog.x-portal.x) must be strictly <0.5 and portal must be unfilled; otherwise fatal. Capturing ends the evaluation successfully.",
+        "timeout": "Countdown reaching zero is fatal."
+      },
+      "level": 1,
+      "countdownSeconds": 28.233333333333434,
+      "player": {
+        "prevPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 11.000790913580246
+        },
+        "currPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 11
+        },
+        "targetPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 11
+        },
+        "isHopping": false,
+        "hopProgress": 0,
+        "hopSpeed": 8,
+        "deathType": null
+      },
+      "obstacles": [
+        {
+          "id": 0,
+          "laneZ": 11,
+          "x": 7.900000000000034,
+          "prevX": 7.920000000000034,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 1,
+          "laneZ": 11,
+          "x": -6.119999999999955,
+          "prevX": -6.099999999999955,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 2,
+          "laneZ": 11,
+          "x": -1.1200000000000012,
+          "prevX": -1.1000000000000012,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 3,
+          "laneZ": 10,
+          "x": -6.349999999999962,
+          "prevX": -6.374999999999963,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 4,
+          "laneZ": 10,
+          "x": -0.8500000000000087,
+          "prevX": -0.8750000000000088,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 5,
+          "laneZ": 10,
+          "x": 4.650000000000002,
+          "prevX": 4.625000000000002,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 6,
+          "laneZ": 9,
+          "x": 6.830000000000022,
+          "prevX": 6.8600000000000225,
+          "speed": -1.8,
+          "length": 2,
+          "type": "car"
+        },
+        {
+          "id": 7,
+          "laneZ": 9,
+          "x": -4.179999999999989,
+          "prevX": -4.149999999999989,
+          "speed": -1.8,
+          "length": 2,
+          "type": "car"
+        },
+        {
+          "id": 8,
+          "laneZ": 8,
+          "x": -5.113333333333291,
+          "prevX": -5.149999999999958,
+          "speed": 2.2,
+          "length": 3,
+          "type": "truck"
+        },
+        {
+          "id": 9,
+          "laneZ": 8,
+          "x": 3.886666666666663,
+          "prevX": 3.8499999999999965,
+          "speed": 2.2,
+          "length": 3,
+          "type": "truck"
+        },
+        {
+          "id": 10,
+          "laneZ": 7,
+          "x": 7.539999999999992,
+          "prevX": 7.5633333333333255,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 11,
+          "laneZ": 7,
+          "x": -6.473333333333343,
+          "prevX": -6.45000000000001,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 12,
+          "laneZ": 7,
+          "x": -1.473333333333334,
+          "prevX": -1.4500000000000006,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 13,
+          "laneZ": 5,
+          "x": -7.056666666666693,
+          "prevX": -7.075000000000027,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 14,
+          "laneZ": 5,
+          "x": -1.5566666666666509,
+          "prevX": -1.5749999999999842,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 15,
+          "laneZ": 5,
+          "x": 3.9433333333333547,
+          "prevX": 3.925000000000021,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 16,
+          "laneZ": 4,
+          "x": 7.723333333333347,
+          "prevX": 7.745000000000013,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 17,
+          "laneZ": 4,
+          "x": -6.296666666666649,
+          "prevX": -6.274999999999983,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 18,
+          "laneZ": 4,
+          "x": -1.29666666666667,
+          "prevX": -1.2750000000000032,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 19,
+          "laneZ": 3,
+          "x": -6.173333333333329,
+          "prevX": -6.199999999999996,
+          "speed": 1.6,
+          "length": 4.5,
+          "type": "log"
+        },
+        {
+          "id": 20,
+          "laneZ": 3,
+          "x": 1.8266666666666636,
+          "prevX": 1.799999999999997,
+          "speed": 1.6,
+          "length": 4.5,
+          "type": "log"
+        },
+        {
+          "id": 21,
+          "laneZ": 2,
+          "x": 8.419999999999959,
+          "prevX": 8.43499999999996,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 22,
+          "laneZ": 2,
+          "x": -5.089999999999981,
+          "prevX": -5.0749999999999815,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 23,
+          "laneZ": 2,
+          "x": 0.4100000000000059,
+          "prevX": 0.42500000000000593,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 24,
+          "laneZ": 1,
+          "x": -6.526666666666657,
+          "prevX": -6.54999999999999,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 25,
+          "laneZ": 1,
+          "x": -1.5266666666666566,
+          "prevX": -1.54999999999999,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 26,
+          "laneZ": 1,
+          "x": 3.4733333333333434,
+          "prevX": 3.45000000000001,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        }
+      ],
+      "portals": [
+        {
+          "x": -4,
+          "filled": false
+        },
+        {
+          "x": -2,
+          "filled": false
+        },
+        {
+          "x": 0,
+          "filled": false
+        },
+        {
+          "x": 2,
+          "filled": false
+        },
+        {
+          "x": 4,
+          "filled": false
+        }
+      ]
+    },
+    "candidates": {
+      "UP": {
+        "requestedAction": "UP",
+        "executedAction": "UP",
+        "accepted": true,
+        "vetoed": false,
+        "safe": false,
+        "death": "crash",
+        "captures": 0,
+        "rowGain": -1,
+        "progressScore": 0,
+        "ticks": 9,
+        "finalPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 12
+        }
+      },
+      "DOWN": {
+        "requestedAction": "DOWN",
+        "executedAction": "DOWN",
+        "accepted": true,
+        "vetoed": false,
+        "safe": true,
+        "death": null,
+        "captures": 0,
+        "rowGain": -1,
+        "progressScore": 2,
+        "ticks": 10,
+        "finalPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 12
+        }
+      },
+      "LEFT": {
+        "requestedAction": "LEFT",
+        "executedAction": "LEFT",
+        "accepted": true,
+        "vetoed": false,
+        "safe": false,
+        "death": "crash",
+        "captures": 0,
+        "rowGain": -1,
+        "progressScore": 0,
+        "ticks": 9,
+        "finalPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 12
+        }
+      },
+      "RIGHT": {
+        "requestedAction": "RIGHT",
+        "executedAction": "RIGHT",
+        "accepted": true,
+        "vetoed": false,
+        "safe": true,
+        "death": null,
+        "captures": 0,
+        "rowGain": 0,
+        "progressScore": 2,
+        "ticks": 10,
+        "finalPosition": {
+          "x": 1,
+          "y": 0,
+          "z": 11
+        }
+      },
+      "WAIT": {
+        "requestedAction": "WAIT",
+        "executedAction": "WAIT",
+        "accepted": true,
+        "vetoed": false,
+        "safe": true,
+        "death": null,
+        "captures": 0,
+        "rowGain": 0,
+        "progressScore": 1,
+        "ticks": 10,
+        "finalPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 11
+        }
+      }
+    },
+    "local": {
+      "requestedAction": "LOCAL",
+      "executedAction": "WAIT",
+      "accepted": true,
+      "vetoed": false,
+      "safe": true,
+      "death": null,
+      "captures": 0,
+      "rowGain": 0,
+      "progressScore": 1,
+      "ticks": 10,
+      "finalPosition": {
+        "x": 0,
+        "y": 0,
+        "z": 11
+      }
+    },
+    "questions": {
+      "action": {
+        "type": "choice",
+        "instructions": "Select a legal action that survives the ten-tick horizon and makes useful progress toward an open portal. If local candidate predictions are supplied, use them: prefer surviving candidates, then higher progressScore. A prediction is computed by local game physics, not another model. Return your chosen action.",
+        "criteria": {
+          "UP": "UP",
+          "DOWN": "DOWN",
+          "LEFT": "LEFT",
+          "RIGHT": "RIGHT",
+          "WAIT": "WAIT"
+        }
+      }
+    }
+  },
+  {
+    "id": "trajectory-0-tick-2372",
+    "zone": "road",
+    "upSafe": true,
+    "snapshot": {
+      "level": 1,
+      "lives": 3,
+      "player": {
+        "prevPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 8.000790913580246
+        },
+        "currPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 8
+        },
+        "targetPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 8
+        },
+        "isHopping": false,
+        "hopProgress": 0,
+        "hopSpeed": 8,
+        "deathType": null
+      },
+      "obstacles": [
+        {
+          "id": 0,
+          "laneZ": 11,
+          "x": 0.6200000000001142,
+          "prevX": 0.6400000000001143,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 1,
+          "laneZ": 11,
+          "x": 5.620000000000083,
+          "prevX": 5.640000000000082,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 2,
+          "laneZ": 11,
+          "x": -8.399999999999796,
+          "prevX": -8.379999999999797,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 3,
+          "laneZ": 10,
+          "x": -6.69999999999996,
+          "prevX": -6.724999999999961,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 4,
+          "laneZ": 10,
+          "x": -1.1999999999999322,
+          "prevX": -1.2249999999999321,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 5,
+          "laneZ": 10,
+          "x": 4.300000000000062,
+          "prevX": 4.275000000000062,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 6,
+          "laneZ": 9,
+          "x": -4.0899999999999785,
+          "prevX": -4.059999999999978,
+          "speed": -1.8,
+          "length": 2,
+          "type": "car"
+        },
+        {
+          "id": 7,
+          "laneZ": 9,
+          "x": 3.9199999999999995,
+          "prevX": 3.9499999999999993,
+          "speed": -1.8,
+          "length": 2,
+          "type": "car"
+        },
+        {
+          "id": 8,
+          "laneZ": 8,
+          "x": 1.8666666666667215,
+          "prevX": 1.830000000000055,
+          "speed": 2.2,
+          "length": 3,
+          "type": "truck"
+        },
+        {
+          "id": 9,
+          "laneZ": 8,
+          "x": -8.179999999999986,
+          "prevX": -8.216666666666653,
+          "speed": 2.2,
+          "length": 3,
+          "type": "truck"
+        },
+        {
+          "id": 10,
+          "laneZ": 7,
+          "x": -7.300000000000058,
+          "prevX": -7.276666666666725,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 11,
+          "laneZ": 7,
+          "x": -2.3066666666667053,
+          "prevX": -2.283333333333372,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 12,
+          "laneZ": 7,
+          "x": 2.686666666666639,
+          "prevX": 2.7099999999999724,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 13,
+          "laneZ": 5,
+          "x": -3.541666666666673,
+          "prevX": -3.5600000000000067,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 14,
+          "laneZ": 5,
+          "x": 1.9583333333333401,
+          "prevX": 1.9400000000000068,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 15,
+          "laneZ": 5,
+          "x": 7.4583333333334,
+          "prevX": 7.440000000000066,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 16,
+          "laneZ": 4,
+          "x": -3.3699999999999397,
+          "prevX": -3.348333333333273,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 17,
+          "laneZ": 4,
+          "x": 1.6133333333333897,
+          "prevX": 1.6350000000000564,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 18,
+          "laneZ": 4,
+          "x": 6.618333333333355,
+          "prevX": 6.640000000000022,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 19,
+          "laneZ": 3,
+          "x": -2.7799999999999985,
+          "prevX": -2.8066666666666653,
+          "speed": 1.6,
+          "length": 4.5,
+          "type": "log"
+        },
+        {
+          "id": 20,
+          "laneZ": 3,
+          "x": 5.2200000000000015,
+          "prevX": 5.193333333333335,
+          "speed": 1.6,
+          "length": 4.5,
+          "type": "log"
+        },
+        {
+          "id": 21,
+          "laneZ": 2,
+          "x": -6.564999999999938,
+          "prevX": -6.5499999999999385,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 22,
+          "laneZ": 2,
+          "x": -1.0599999999999823,
+          "prevX": -1.0449999999999824,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 23,
+          "laneZ": 2,
+          "x": 4.43000000000002,
+          "prevX": 4.44500000000002,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 24,
+          "laneZ": 1,
+          "x": 8.326666666666728,
+          "prevX": 8.303333333333395,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 25,
+          "laneZ": 1,
+          "x": -5.696666666666651,
+          "prevX": -5.719999999999985,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 26,
+          "laneZ": 1,
+          "x": -0.7033333333332991,
+          "prevX": -0.7266666666666324,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        }
+      ],
+      "portals": [
+        {
+          "x": -4,
+          "filled": true
+        },
+        {
+          "x": -2,
+          "filled": true
+        },
+        {
+          "x": 0,
+          "filled": true
+        },
+        {
+          "x": 2,
+          "filled": false
+        },
+        {
+          "x": 4,
+          "filled": false
+        }
+      ],
+      "countdownTimer": 26.950000000000173,
+      "fixedDeltaTime": 0.016666666666666666,
+      "simulationSpeed": 1
+    },
+    "state": {
+      "rules": {
+        "objective": "Survive and reach an empty portal at z=0. Prefer useful forward progress when safe; waiting can allow traffic or logs to align.",
+        "dtSeconds": 0.016666666666666666,
+        "hopSpeed": 8,
+        "horizonTicks": 10,
+        "timing": "The snapshot is immediately before a physics tick. Each tick reduces countdown, moves obstacles, then processes the frog. On the first tick a grounded road collision kills before input. A legal command starts a hop; hop progress starts increasing on the following tick by dt*hopSpeed until >=1. At hopSpeed=8 it lands after eight further ticks. No drift during hopping or on the landing tick. No further commands during the horizon. WAIT remains grounded for all ten ticks.",
+        "obstacles": "x += speed*dt on every tick. After moving past x=9.5 to the right, set x=-9.5; after moving past -9.5 to the left, set x=9.5. Speeds are signed units per simulated second.",
+        "movement": "UP decreases z by 1 if z>0; DOWN increases z by 1 if z<12; LEFT decreases x by 1 only if current x>-5; RIGHT increases x by 1 only if current x<5. WAIT is always a legal command. An illegal move is not a safe candidate even if the frog survives staying still.",
+        "roads": "Rows z=7..11. Grounded/landing collision when abs(frog.x-obstacle.x) <= obstacle.length/2 + 0.20. No airborne collisions.",
+        "river": "Rows z=1..5. At landing or while idle, a log must satisfy abs(frog.x-log.x) <= log.length/2 + 0.20 or the frog drowns. When idle, test overlap after log movement then carry frog by log.speed*dt. Carried x outside [-6.5,6.5] is fatal.",
+        "banks": "Rows z=12 and z=6 have no traffic or river hazards.",
+        "portals": "At z=0, abs(frog.x-portal.x) must be strictly <0.5 and portal must be unfilled; otherwise fatal. Capturing ends the evaluation successfully.",
+        "timeout": "Countdown reaching zero is fatal."
+      },
+      "level": 1,
+      "countdownSeconds": 26.950000000000173,
+      "player": {
+        "prevPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 8.000790913580246
+        },
+        "currPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 8
+        },
+        "targetPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 8
+        },
+        "isHopping": false,
+        "hopProgress": 0,
+        "hopSpeed": 8,
+        "deathType": null
+      },
+      "obstacles": [
+        {
+          "id": 0,
+          "laneZ": 11,
+          "x": 0.6200000000001142,
+          "prevX": 0.6400000000001143,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 1,
+          "laneZ": 11,
+          "x": 5.620000000000083,
+          "prevX": 5.640000000000082,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 2,
+          "laneZ": 11,
+          "x": -8.399999999999796,
+          "prevX": -8.379999999999797,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 3,
+          "laneZ": 10,
+          "x": -6.69999999999996,
+          "prevX": -6.724999999999961,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 4,
+          "laneZ": 10,
+          "x": -1.1999999999999322,
+          "prevX": -1.2249999999999321,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 5,
+          "laneZ": 10,
+          "x": 4.300000000000062,
+          "prevX": 4.275000000000062,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 6,
+          "laneZ": 9,
+          "x": -4.0899999999999785,
+          "prevX": -4.059999999999978,
+          "speed": -1.8,
+          "length": 2,
+          "type": "car"
+        },
+        {
+          "id": 7,
+          "laneZ": 9,
+          "x": 3.9199999999999995,
+          "prevX": 3.9499999999999993,
+          "speed": -1.8,
+          "length": 2,
+          "type": "car"
+        },
+        {
+          "id": 8,
+          "laneZ": 8,
+          "x": 1.8666666666667215,
+          "prevX": 1.830000000000055,
+          "speed": 2.2,
+          "length": 3,
+          "type": "truck"
+        },
+        {
+          "id": 9,
+          "laneZ": 8,
+          "x": -8.179999999999986,
+          "prevX": -8.216666666666653,
+          "speed": 2.2,
+          "length": 3,
+          "type": "truck"
+        },
+        {
+          "id": 10,
+          "laneZ": 7,
+          "x": -7.300000000000058,
+          "prevX": -7.276666666666725,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 11,
+          "laneZ": 7,
+          "x": -2.3066666666667053,
+          "prevX": -2.283333333333372,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 12,
+          "laneZ": 7,
+          "x": 2.686666666666639,
+          "prevX": 2.7099999999999724,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 13,
+          "laneZ": 5,
+          "x": -3.541666666666673,
+          "prevX": -3.5600000000000067,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 14,
+          "laneZ": 5,
+          "x": 1.9583333333333401,
+          "prevX": 1.9400000000000068,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 15,
+          "laneZ": 5,
+          "x": 7.4583333333334,
+          "prevX": 7.440000000000066,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 16,
+          "laneZ": 4,
+          "x": -3.3699999999999397,
+          "prevX": -3.348333333333273,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 17,
+          "laneZ": 4,
+          "x": 1.6133333333333897,
+          "prevX": 1.6350000000000564,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 18,
+          "laneZ": 4,
+          "x": 6.618333333333355,
+          "prevX": 6.640000000000022,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 19,
+          "laneZ": 3,
+          "x": -2.7799999999999985,
+          "prevX": -2.8066666666666653,
+          "speed": 1.6,
+          "length": 4.5,
+          "type": "log"
+        },
+        {
+          "id": 20,
+          "laneZ": 3,
+          "x": 5.2200000000000015,
+          "prevX": 5.193333333333335,
+          "speed": 1.6,
+          "length": 4.5,
+          "type": "log"
+        },
+        {
+          "id": 21,
+          "laneZ": 2,
+          "x": -6.564999999999938,
+          "prevX": -6.5499999999999385,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 22,
+          "laneZ": 2,
+          "x": -1.0599999999999823,
+          "prevX": -1.0449999999999824,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 23,
+          "laneZ": 2,
+          "x": 4.43000000000002,
+          "prevX": 4.44500000000002,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 24,
+          "laneZ": 1,
+          "x": 8.326666666666728,
+          "prevX": 8.303333333333395,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 25,
+          "laneZ": 1,
+          "x": -5.696666666666651,
+          "prevX": -5.719999999999985,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 26,
+          "laneZ": 1,
+          "x": -0.7033333333332991,
+          "prevX": -0.7266666666666324,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        }
+      ],
+      "portals": [
+        {
+          "x": -4,
+          "filled": true
+        },
+        {
+          "x": -2,
+          "filled": true
+        },
+        {
+          "x": 0,
+          "filled": true
+        },
+        {
+          "x": 2,
+          "filled": false
+        },
+        {
+          "x": 4,
+          "filled": false
+        }
+      ]
+    },
+    "candidates": {
+      "UP": {
+        "requestedAction": "UP",
+        "executedAction": "UP",
+        "accepted": true,
+        "vetoed": false,
+        "safe": true,
+        "death": null,
+        "captures": 0,
+        "rowGain": 1,
+        "progressScore": 3,
+        "ticks": 10,
+        "finalPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 7
+        }
+      },
+      "DOWN": {
+        "requestedAction": "DOWN",
+        "executedAction": "DOWN",
+        "accepted": true,
+        "vetoed": false,
+        "safe": true,
+        "death": null,
+        "captures": 0,
+        "rowGain": -1,
+        "progressScore": 2,
+        "ticks": 10,
+        "finalPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 9
+        }
+      },
+      "LEFT": {
+        "requestedAction": "LEFT",
+        "executedAction": "LEFT",
+        "accepted": true,
+        "vetoed": false,
+        "safe": true,
+        "death": null,
+        "captures": 0,
+        "rowGain": 0,
+        "progressScore": 2,
+        "ticks": 10,
+        "finalPosition": {
+          "x": -1,
+          "y": 0,
+          "z": 8
+        }
+      },
+      "RIGHT": {
+        "requestedAction": "RIGHT",
+        "executedAction": "RIGHT",
+        "accepted": true,
+        "vetoed": false,
+        "safe": false,
+        "death": "crash",
+        "captures": 0,
+        "rowGain": -4,
+        "progressScore": 0,
+        "ticks": 9,
+        "finalPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 12
+        }
+      },
+      "WAIT": {
+        "requestedAction": "WAIT",
+        "executedAction": "WAIT",
+        "accepted": true,
+        "vetoed": false,
+        "safe": true,
+        "death": null,
+        "captures": 0,
+        "rowGain": 0,
+        "progressScore": 2,
+        "ticks": 10,
+        "finalPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 8
+        }
+      }
+    },
+    "local": {
+      "requestedAction": "LOCAL",
+      "executedAction": "UP",
+      "accepted": true,
+      "vetoed": false,
+      "safe": true,
+      "death": null,
+      "captures": 0,
+      "rowGain": 1,
+      "progressScore": 3,
+      "ticks": 10,
+      "finalPosition": {
+        "x": 0,
+        "y": 0,
+        "z": 7
+      }
+    },
+    "questions": {
+      "action": {
+        "type": "choice",
+        "instructions": "Select a legal action that survives the ten-tick horizon and makes useful progress toward an open portal. If local candidate predictions are supplied, use them: prefer surviving candidates, then higher progressScore. A prediction is computed by local game physics, not another model. Return your chosen action.",
+        "criteria": {
+          "UP": "UP",
+          "DOWN": "DOWN",
+          "LEFT": "LEFT",
+          "RIGHT": "RIGHT",
+          "WAIT": "WAIT"
+        }
+      }
+    }
+  },
+  {
+    "id": "trajectory-0-tick-392",
+    "zone": "river",
+    "upSafe": false,
+    "snapshot": {
+      "level": 1,
+      "lives": 3,
+      "player": {
+        "prevPosition": {
+          "x": -1,
+          "y": 0,
+          "z": 5.000790913580247
+        },
+        "currPosition": {
+          "x": -1,
+          "y": 0,
+          "z": 5
+        },
+        "targetPosition": {
+          "x": -1,
+          "y": 0,
+          "z": 5
+        },
+        "isHopping": false,
+        "hopProgress": 0,
+        "hopSpeed": 8,
+        "deathType": null
+      },
+      "obstacles": [
+        {
+          "id": 0,
+          "laneZ": 11,
+          "x": 2.1800000000001156,
+          "prevX": 2.2000000000001156,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 1,
+          "laneZ": 11,
+          "x": 7.1800000000000495,
+          "prevX": 7.200000000000049,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 2,
+          "laneZ": 11,
+          "x": -6.839999999999943,
+          "prevX": -6.819999999999943,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 3,
+          "laneZ": 10,
+          "x": 0.8000000000000611,
+          "prevX": 0.7750000000000611,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 4,
+          "laneZ": 10,
+          "x": 6.300000000000014,
+          "prevX": 6.275000000000014,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 5,
+          "laneZ": 10,
+          "x": -7.199999999999967,
+          "prevX": -7.224999999999968,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 6,
+          "laneZ": 9,
+          "x": -1.7499999999999907,
+          "prevX": -1.7199999999999906,
+          "speed": -1.8,
+          "length": 2,
+          "type": "car"
+        },
+        {
+          "id": 7,
+          "laneZ": 9,
+          "x": 6.2600000000000176,
+          "prevX": 6.290000000000018,
+          "speed": -1.8,
+          "length": 2,
+          "type": "car"
+        },
+        {
+          "id": 8,
+          "laneZ": 8,
+          "x": 5.373333333333396,
+          "prevX": 5.336666666666729,
+          "speed": 2.2,
+          "length": 3,
+          "type": "truck"
+        },
+        {
+          "id": 9,
+          "laneZ": 8,
+          "x": -4.659999999999947,
+          "prevX": -4.696666666666614,
+          "speed": 2.2,
+          "length": 3,
+          "type": "truck"
+        },
+        {
+          "id": 10,
+          "laneZ": 7,
+          "x": 0.8666666666666323,
+          "prevX": 0.8899999999999656,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 11,
+          "laneZ": 7,
+          "x": 5.859999999999985,
+          "prevX": 5.883333333333319,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 12,
+          "laneZ": 7,
+          "x": -8.146666666666693,
+          "prevX": -8.12333333333336,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 13,
+          "laneZ": 5,
+          "x": -1.8133333333333048,
+          "prevX": -1.8316666666666381,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 14,
+          "laneZ": 5,
+          "x": 3.686666666666698,
+          "prevX": 3.6683333333333645,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 15,
+          "laneZ": 5,
+          "x": 9.186666666666689,
+          "prevX": 9.168333333333356,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 16,
+          "laneZ": 4,
+          "x": 1.5266666666667228,
+          "prevX": 1.5483333333333895,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 17,
+          "laneZ": 4,
+          "x": 6.510000000000023,
+          "prevX": 6.531666666666689,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 18,
+          "laneZ": 4,
+          "x": -7.493333333333297,
+          "prevX": -7.47166666666663,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 19,
+          "laneZ": 3,
+          "x": 1.4533333333333238,
+          "prevX": 1.4266666666666572,
+          "speed": 1.6,
+          "length": 4.5,
+          "type": "log"
+        },
+        {
+          "id": 20,
+          "laneZ": 3,
+          "x": 9.453333333333335,
+          "prevX": 9.426666666666668,
+          "speed": 1.6,
+          "length": 4.5,
+          "type": "log"
+        },
+        {
+          "id": 21,
+          "laneZ": 2,
+          "x": 4.1300000000000265,
+          "prevX": 4.145000000000026,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 22,
+          "laneZ": 2,
+          "x": -9.37999999999997,
+          "prevX": -9.36499999999997,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 23,
+          "laneZ": 2,
+          "x": -3.8800000000000043,
+          "prevX": -3.865000000000004,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 24,
+          "laneZ": 1,
+          "x": 0.14666666666669842,
+          "prevX": 0.12333333333336509,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 25,
+          "laneZ": 1,
+          "x": 5.146666666666694,
+          "prevX": 5.123333333333361,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 26,
+          "laneZ": 1,
+          "x": -8.869999999999997,
+          "prevX": -8.89333333333333,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        }
+      ],
+      "portals": [
+        {
+          "x": -4,
+          "filled": false
+        },
+        {
+          "x": -2,
+          "filled": false
+        },
+        {
+          "x": 0,
+          "filled": false
+        },
+        {
+          "x": 2,
+          "filled": false
+        },
+        {
+          "x": 4,
+          "filled": false
+        }
+      ],
+      "countdownTimer": 23.466666666667038,
+      "fixedDeltaTime": 0.016666666666666666,
+      "simulationSpeed": 1
+    },
+    "state": {
+      "rules": {
+        "objective": "Survive and reach an empty portal at z=0. Prefer useful forward progress when safe; waiting can allow traffic or logs to align.",
+        "dtSeconds": 0.016666666666666666,
+        "hopSpeed": 8,
+        "horizonTicks": 10,
+        "timing": "The snapshot is immediately before a physics tick. Each tick reduces countdown, moves obstacles, then processes the frog. On the first tick a grounded road collision kills before input. A legal command starts a hop; hop progress starts increasing on the following tick by dt*hopSpeed until >=1. At hopSpeed=8 it lands after eight further ticks. No drift during hopping or on the landing tick. No further commands during the horizon. WAIT remains grounded for all ten ticks.",
+        "obstacles": "x += speed*dt on every tick. After moving past x=9.5 to the right, set x=-9.5; after moving past -9.5 to the left, set x=9.5. Speeds are signed units per simulated second.",
+        "movement": "UP decreases z by 1 if z>0; DOWN increases z by 1 if z<12; LEFT decreases x by 1 only if current x>-5; RIGHT increases x by 1 only if current x<5. WAIT is always a legal command. An illegal move is not a safe candidate even if the frog survives staying still.",
+        "roads": "Rows z=7..11. Grounded/landing collision when abs(frog.x-obstacle.x) <= obstacle.length/2 + 0.20. No airborne collisions.",
+        "river": "Rows z=1..5. At landing or while idle, a log must satisfy abs(frog.x-log.x) <= log.length/2 + 0.20 or the frog drowns. When idle, test overlap after log movement then carry frog by log.speed*dt. Carried x outside [-6.5,6.5] is fatal.",
+        "banks": "Rows z=12 and z=6 have no traffic or river hazards.",
+        "portals": "At z=0, abs(frog.x-portal.x) must be strictly <0.5 and portal must be unfilled; otherwise fatal. Capturing ends the evaluation successfully.",
+        "timeout": "Countdown reaching zero is fatal."
+      },
+      "level": 1,
+      "countdownSeconds": 23.466666666667038,
+      "player": {
+        "prevPosition": {
+          "x": -1,
+          "y": 0,
+          "z": 5.000790913580247
+        },
+        "currPosition": {
+          "x": -1,
+          "y": 0,
+          "z": 5
+        },
+        "targetPosition": {
+          "x": -1,
+          "y": 0,
+          "z": 5
+        },
+        "isHopping": false,
+        "hopProgress": 0,
+        "hopSpeed": 8,
+        "deathType": null
+      },
+      "obstacles": [
+        {
+          "id": 0,
+          "laneZ": 11,
+          "x": 2.1800000000001156,
+          "prevX": 2.2000000000001156,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 1,
+          "laneZ": 11,
+          "x": 7.1800000000000495,
+          "prevX": 7.200000000000049,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 2,
+          "laneZ": 11,
+          "x": -6.839999999999943,
+          "prevX": -6.819999999999943,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 3,
+          "laneZ": 10,
+          "x": 0.8000000000000611,
+          "prevX": 0.7750000000000611,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 4,
+          "laneZ": 10,
+          "x": 6.300000000000014,
+          "prevX": 6.275000000000014,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 5,
+          "laneZ": 10,
+          "x": -7.199999999999967,
+          "prevX": -7.224999999999968,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 6,
+          "laneZ": 9,
+          "x": -1.7499999999999907,
+          "prevX": -1.7199999999999906,
+          "speed": -1.8,
+          "length": 2,
+          "type": "car"
+        },
+        {
+          "id": 7,
+          "laneZ": 9,
+          "x": 6.2600000000000176,
+          "prevX": 6.290000000000018,
+          "speed": -1.8,
+          "length": 2,
+          "type": "car"
+        },
+        {
+          "id": 8,
+          "laneZ": 8,
+          "x": 5.373333333333396,
+          "prevX": 5.336666666666729,
+          "speed": 2.2,
+          "length": 3,
+          "type": "truck"
+        },
+        {
+          "id": 9,
+          "laneZ": 8,
+          "x": -4.659999999999947,
+          "prevX": -4.696666666666614,
+          "speed": 2.2,
+          "length": 3,
+          "type": "truck"
+        },
+        {
+          "id": 10,
+          "laneZ": 7,
+          "x": 0.8666666666666323,
+          "prevX": 0.8899999999999656,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 11,
+          "laneZ": 7,
+          "x": 5.859999999999985,
+          "prevX": 5.883333333333319,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 12,
+          "laneZ": 7,
+          "x": -8.146666666666693,
+          "prevX": -8.12333333333336,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 13,
+          "laneZ": 5,
+          "x": -1.8133333333333048,
+          "prevX": -1.8316666666666381,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 14,
+          "laneZ": 5,
+          "x": 3.686666666666698,
+          "prevX": 3.6683333333333645,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 15,
+          "laneZ": 5,
+          "x": 9.186666666666689,
+          "prevX": 9.168333333333356,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 16,
+          "laneZ": 4,
+          "x": 1.5266666666667228,
+          "prevX": 1.5483333333333895,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 17,
+          "laneZ": 4,
+          "x": 6.510000000000023,
+          "prevX": 6.531666666666689,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 18,
+          "laneZ": 4,
+          "x": -7.493333333333297,
+          "prevX": -7.47166666666663,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 19,
+          "laneZ": 3,
+          "x": 1.4533333333333238,
+          "prevX": 1.4266666666666572,
+          "speed": 1.6,
+          "length": 4.5,
+          "type": "log"
+        },
+        {
+          "id": 20,
+          "laneZ": 3,
+          "x": 9.453333333333335,
+          "prevX": 9.426666666666668,
+          "speed": 1.6,
+          "length": 4.5,
+          "type": "log"
+        },
+        {
+          "id": 21,
+          "laneZ": 2,
+          "x": 4.1300000000000265,
+          "prevX": 4.145000000000026,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 22,
+          "laneZ": 2,
+          "x": -9.37999999999997,
+          "prevX": -9.36499999999997,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 23,
+          "laneZ": 2,
+          "x": -3.8800000000000043,
+          "prevX": -3.865000000000004,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 24,
+          "laneZ": 1,
+          "x": 0.14666666666669842,
+          "prevX": 0.12333333333336509,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 25,
+          "laneZ": 1,
+          "x": 5.146666666666694,
+          "prevX": 5.123333333333361,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 26,
+          "laneZ": 1,
+          "x": -8.869999999999997,
+          "prevX": -8.89333333333333,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        }
+      ],
+      "portals": [
+        {
+          "x": -4,
+          "filled": false
+        },
+        {
+          "x": -2,
+          "filled": false
+        },
+        {
+          "x": 0,
+          "filled": false
+        },
+        {
+          "x": 2,
+          "filled": false
+        },
+        {
+          "x": 4,
+          "filled": false
+        }
+      ]
+    },
+    "candidates": {
+      "UP": {
+        "requestedAction": "UP",
+        "executedAction": "UP",
+        "accepted": true,
+        "vetoed": false,
+        "safe": false,
+        "death": "drown",
+        "captures": 0,
+        "rowGain": -7,
+        "progressScore": 0,
+        "ticks": 9,
+        "finalPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 12
+        }
+      },
+      "DOWN": {
+        "requestedAction": "DOWN",
+        "executedAction": "DOWN",
+        "accepted": true,
+        "vetoed": false,
+        "safe": true,
+        "death": null,
+        "captures": 0,
+        "rowGain": -1,
+        "progressScore": 2,
+        "ticks": 10,
+        "finalPosition": {
+          "x": -1,
+          "y": 0,
+          "z": 6
+        }
+      },
+      "LEFT": {
+        "requestedAction": "LEFT",
+        "executedAction": "LEFT",
+        "accepted": true,
+        "vetoed": false,
+        "safe": true,
+        "death": null,
+        "captures": 0,
+        "rowGain": 0,
+        "progressScore": 1,
+        "ticks": 10,
+        "finalPosition": {
+          "x": -1.9816666666666667,
+          "y": 0,
+          "z": 5
+        }
+      },
+      "RIGHT": {
+        "requestedAction": "RIGHT",
+        "executedAction": "RIGHT",
+        "accepted": true,
+        "vetoed": false,
+        "safe": false,
+        "death": "drown",
+        "captures": 0,
+        "rowGain": -7,
+        "progressScore": 0,
+        "ticks": 9,
+        "finalPosition": {
+          "x": 0,
+          "y": 0,
+          "z": 12
+        }
+      },
+      "WAIT": {
+        "requestedAction": "WAIT",
+        "executedAction": "WAIT",
+        "accepted": true,
+        "vetoed": false,
+        "safe": true,
+        "death": null,
+        "captures": 0,
+        "rowGain": 0,
+        "progressScore": 1,
+        "ticks": 10,
+        "finalPosition": {
+          "x": -0.8166666666666669,
+          "y": 0,
+          "z": 5
+        }
+      }
+    },
+    "local": {
+      "requestedAction": "LOCAL",
+      "executedAction": "LEFT",
+      "accepted": true,
+      "vetoed": false,
+      "safe": true,
+      "death": null,
+      "captures": 0,
+      "rowGain": 0,
+      "progressScore": 1,
+      "ticks": 10,
+      "finalPosition": {
+        "x": -1.9816666666666667,
+        "y": 0,
+        "z": 5
+      }
+    },
+    "questions": {
+      "action": {
+        "type": "choice",
+        "instructions": "Select a legal action that survives the ten-tick horizon and makes useful progress toward an open portal. If local candidate predictions are supplied, use them: prefer surviving candidates, then higher progressScore. A prediction is computed by local game physics, not another model. Return your chosen action.",
+        "criteria": {
+          "UP": "UP",
+          "DOWN": "DOWN",
+          "LEFT": "LEFT",
+          "RIGHT": "RIGHT",
+          "WAIT": "WAIT"
+        }
+      }
+    }
+  },
+  {
+    "id": "trajectory-0-tick-1080",
+    "zone": "river",
+    "upSafe": true,
+    "snapshot": {
+      "level": 1,
+      "lives": 3,
+      "player": {
+        "prevPosition": {
+          "x": -2.2449999999999974,
+          "y": 0,
+          "z": 5
+        },
+        "currPosition": {
+          "x": -2.2449999999999974,
+          "y": 0,
+          "z": 5
+        },
+        "targetPosition": {
+          "x": -2.2449999999999974,
+          "y": 0,
+          "z": 5
+        },
+        "isHopping": false,
+        "hopProgress": 0,
+        "hopSpeed": 8,
+        "deathType": null
+      },
+      "obstacles": [
+        {
+          "id": 0,
+          "laneZ": 11,
+          "x": 7.440000000000044,
+          "prevX": 7.4600000000000435,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 1,
+          "laneZ": 11,
+          "x": -6.579999999999834,
+          "prevX": -6.559999999999834,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 2,
+          "laneZ": 11,
+          "x": -1.579999999999887,
+          "prevX": -1.559999999999887,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 3,
+          "laneZ": 10,
+          "x": -0.9999999999999328,
+          "prevX": -1.0249999999999329,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 4,
+          "laneZ": 10,
+          "x": 4.500000000000065,
+          "prevX": 4.4750000000000645,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 5,
+          "laneZ": 10,
+          "x": -8.999999999999993,
+          "prevX": -9.024999999999993,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 6,
+          "laneZ": 9,
+          "x": -3.369999999999982,
+          "prevX": -3.339999999999982,
+          "speed": -1.8,
+          "length": 2,
+          "type": "car"
+        },
+        {
+          "id": 7,
+          "laneZ": 9,
+          "x": 4.640000000000004,
+          "prevX": 4.670000000000004,
+          "speed": -1.8,
+          "length": 2,
+          "type": "car"
+        },
+        {
+          "id": 8,
+          "laneZ": 8,
+          "x": -7.446666666666644,
+          "prevX": -7.483333333333311,
+          "speed": 2.2,
+          "length": 3,
+          "type": "truck"
+        },
+        {
+          "id": 9,
+          "laneZ": 8,
+          "x": 1.536666666666722,
+          "prevX": 1.5000000000000553,
+          "speed": 2.2,
+          "length": 3,
+          "type": "truck"
+        },
+        {
+          "id": 10,
+          "laneZ": 7,
+          "x": 3.829999999999977,
+          "prevX": 3.8533333333333104,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 11,
+          "laneZ": 7,
+          "x": 8.82333333333333,
+          "prevX": 8.846666666666664,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 12,
+          "laneZ": 7,
+          "x": -5.20000000000005,
+          "prevX": -5.1766666666667165,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 13,
+          "laneZ": 5,
+          "x": -8.216666666666715,
+          "prevX": -8.235000000000047,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 14,
+          "laneZ": 5,
+          "x": -2.716666666666664,
+          "prevX": -2.7349999999999977,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 15,
+          "laneZ": 5,
+          "x": 2.7833333333333488,
+          "prevX": 2.7650000000000152,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 16,
+          "laneZ": 4,
+          "x": 5.621666666666696,
+          "prevX": 5.643333333333363,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 17,
+          "laneZ": 4,
+          "x": -8.396666666666569,
+          "prevX": -8.374999999999902,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 18,
+          "laneZ": 4,
+          "x": -3.391666666666606,
+          "prevX": -3.3699999999999397,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 19,
+          "laneZ": 3,
+          "x": 0.7933333333333366,
+          "prevX": 0.7666666666666699,
+          "speed": 1.6,
+          "length": 4.5,
+          "type": "log"
+        },
+        {
+          "id": 20,
+          "laneZ": 3,
+          "x": 8.793333333333324,
+          "prevX": 8.766666666666657,
+          "speed": 1.6,
+          "length": 4.5,
+          "type": "log"
+        },
+        {
+          "id": 21,
+          "laneZ": 2,
+          "x": -6.189999999999946,
+          "prevX": -6.1749999999999465,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 22,
+          "laneZ": 2,
+          "x": -0.6849999999999824,
+          "prevX": -0.6699999999999824,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 23,
+          "laneZ": 2,
+          "x": 4.805000000000012,
+          "prevX": 4.820000000000012,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 24,
+          "laneZ": 1,
+          "x": -2.803333333333306,
+          "prevX": -2.8266666666666396,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 25,
+          "laneZ": 1,
+          "x": 2.190000000000038,
+          "prevX": 2.1666666666667047,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 26,
+          "laneZ": 1,
+          "x": 7.183333333333391,
+          "prevX": 7.160000000000058,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        }
+      ],
+      "portals": [
+        {
+          "x": -4,
+          "filled": false
+        },
+        {
+          "x": -2,
+          "filled": false
+        },
+        {
+          "x": 0,
+          "filled": true
+        },
+        {
+          "x": 2,
+          "filled": false
+        },
+        {
+          "x": 4,
+          "filled": false
+        }
+      ],
+      "countdownTimer": 24.616666666666973,
+      "fixedDeltaTime": 0.016666666666666666,
+      "simulationSpeed": 1
+    },
+    "state": {
+      "rules": {
+        "objective": "Survive and reach an empty portal at z=0. Prefer useful forward progress when safe; waiting can allow traffic or logs to align.",
+        "dtSeconds": 0.016666666666666666,
+        "hopSpeed": 8,
+        "horizonTicks": 10,
+        "timing": "The snapshot is immediately before a physics tick. Each tick reduces countdown, moves obstacles, then processes the frog. On the first tick a grounded road collision kills before input. A legal command starts a hop; hop progress starts increasing on the following tick by dt*hopSpeed until >=1. At hopSpeed=8 it lands after eight further ticks. No drift during hopping or on the landing tick. No further commands during the horizon. WAIT remains grounded for all ten ticks.",
+        "obstacles": "x += speed*dt on every tick. After moving past x=9.5 to the right, set x=-9.5; after moving past -9.5 to the left, set x=9.5. Speeds are signed units per simulated second.",
+        "movement": "UP decreases z by 1 if z>0; DOWN increases z by 1 if z<12; LEFT decreases x by 1 only if current x>-5; RIGHT increases x by 1 only if current x<5. WAIT is always a legal command. An illegal move is not a safe candidate even if the frog survives staying still.",
+        "roads": "Rows z=7..11. Grounded/landing collision when abs(frog.x-obstacle.x) <= obstacle.length/2 + 0.20. No airborne collisions.",
+        "river": "Rows z=1..5. At landing or while idle, a log must satisfy abs(frog.x-log.x) <= log.length/2 + 0.20 or the frog drowns. When idle, test overlap after log movement then carry frog by log.speed*dt. Carried x outside [-6.5,6.5] is fatal.",
+        "banks": "Rows z=12 and z=6 have no traffic or river hazards.",
+        "portals": "At z=0, abs(frog.x-portal.x) must be strictly <0.5 and portal must be unfilled; otherwise fatal. Capturing ends the evaluation successfully.",
+        "timeout": "Countdown reaching zero is fatal."
+      },
+      "level": 1,
+      "countdownSeconds": 24.616666666666973,
+      "player": {
+        "prevPosition": {
+          "x": -2.2449999999999974,
+          "y": 0,
+          "z": 5
+        },
+        "currPosition": {
+          "x": -2.2449999999999974,
+          "y": 0,
+          "z": 5
+        },
+        "targetPosition": {
+          "x": -2.2449999999999974,
+          "y": 0,
+          "z": 5
+        },
+        "isHopping": false,
+        "hopProgress": 0,
+        "hopSpeed": 8,
+        "deathType": null
+      },
+      "obstacles": [
+        {
+          "id": 0,
+          "laneZ": 11,
+          "x": 7.440000000000044,
+          "prevX": 7.4600000000000435,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 1,
+          "laneZ": 11,
+          "x": -6.579999999999834,
+          "prevX": -6.559999999999834,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 2,
+          "laneZ": 11,
+          "x": -1.579999999999887,
+          "prevX": -1.559999999999887,
+          "speed": -1.2,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 3,
+          "laneZ": 10,
+          "x": -0.9999999999999328,
+          "prevX": -1.0249999999999329,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 4,
+          "laneZ": 10,
+          "x": 4.500000000000065,
+          "prevX": 4.4750000000000645,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 5,
+          "laneZ": 10,
+          "x": -8.999999999999993,
+          "prevX": -9.024999999999993,
+          "speed": 1.5,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 6,
+          "laneZ": 9,
+          "x": -3.369999999999982,
+          "prevX": -3.339999999999982,
+          "speed": -1.8,
+          "length": 2,
+          "type": "car"
+        },
+        {
+          "id": 7,
+          "laneZ": 9,
+          "x": 4.640000000000004,
+          "prevX": 4.670000000000004,
+          "speed": -1.8,
+          "length": 2,
+          "type": "car"
+        },
+        {
+          "id": 8,
+          "laneZ": 8,
+          "x": -7.446666666666644,
+          "prevX": -7.483333333333311,
+          "speed": 2.2,
+          "length": 3,
+          "type": "truck"
+        },
+        {
+          "id": 9,
+          "laneZ": 8,
+          "x": 1.536666666666722,
+          "prevX": 1.5000000000000553,
+          "speed": 2.2,
+          "length": 3,
+          "type": "truck"
+        },
+        {
+          "id": 10,
+          "laneZ": 7,
+          "x": 3.829999999999977,
+          "prevX": 3.8533333333333104,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 11,
+          "laneZ": 7,
+          "x": 8.82333333333333,
+          "prevX": 8.846666666666664,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 12,
+          "laneZ": 7,
+          "x": -5.20000000000005,
+          "prevX": -5.1766666666667165,
+          "speed": -1.4,
+          "length": 1.5,
+          "type": "car"
+        },
+        {
+          "id": 13,
+          "laneZ": 5,
+          "x": -8.216666666666715,
+          "prevX": -8.235000000000047,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 14,
+          "laneZ": 5,
+          "x": -2.716666666666664,
+          "prevX": -2.7349999999999977,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 15,
+          "laneZ": 5,
+          "x": 2.7833333333333488,
+          "prevX": 2.7650000000000152,
+          "speed": 1.1,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 16,
+          "laneZ": 4,
+          "x": 5.621666666666696,
+          "prevX": 5.643333333333363,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 17,
+          "laneZ": 4,
+          "x": -8.396666666666569,
+          "prevX": -8.374999999999902,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 18,
+          "laneZ": 4,
+          "x": -3.391666666666606,
+          "prevX": -3.3699999999999397,
+          "speed": -1.3,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 19,
+          "laneZ": 3,
+          "x": 0.7933333333333366,
+          "prevX": 0.7666666666666699,
+          "speed": 1.6,
+          "length": 4.5,
+          "type": "log"
+        },
+        {
+          "id": 20,
+          "laneZ": 3,
+          "x": 8.793333333333324,
+          "prevX": 8.766666666666657,
+          "speed": 1.6,
+          "length": 4.5,
+          "type": "log"
+        },
+        {
+          "id": 21,
+          "laneZ": 2,
+          "x": -6.189999999999946,
+          "prevX": -6.1749999999999465,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 22,
+          "laneZ": 2,
+          "x": -0.6849999999999824,
+          "prevX": -0.6699999999999824,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 23,
+          "laneZ": 2,
+          "x": 4.805000000000012,
+          "prevX": 4.820000000000012,
+          "speed": -0.9,
+          "length": 2.5,
+          "type": "log"
+        },
+        {
+          "id": 24,
+          "laneZ": 1,
+          "x": -2.803333333333306,
+          "prevX": -2.8266666666666396,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 25,
+          "laneZ": 1,
+          "x": 2.190000000000038,
+          "prevX": 2.1666666666667047,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        },
+        {
+          "id": 26,
+          "laneZ": 1,
+          "x": 7.183333333333391,
+          "prevX": 7.160000000000058,
+          "speed": 1.4,
+          "length": 3.2,
+          "type": "log"
+        }
+      ],
+      "portals": [
+        {
+          "x": -4,
+          "filled": false
+        },
+        {
+          "x": -2,
+          "filled": false
+        },
+        {
+          "x": 0,
+          "filled": true
+        },
+        {
+          "x": 2,
+          "filled": false
+        },
+        {
+          "x": 4,
+          "filled": false
+        }
+      ]
+    },
+    "candidates": {
+      "UP": {
+        "requestedAction": "UP",
+        "executedAction": "UP",
+        "accepted": true,
+        "vetoed": false,
+        "safe": true,
+        "death": null,
+        "captures": 0,
+        "rowGain": 1,
+        "progressScore": 3,
+        "ticks": 10,
+        "finalPosition": {
+          "x": -2.266666666666664,
+          "y": 0,
+          "z": 4
+        }
+      },
+      "DOWN": {
+        "requestedAction": "DOWN",
+        "executedAction": "DOWN",
+        "accepted": true,
+        "vetoed": false,
+        "safe": true,
+        "death": null,
+        "captures": 0,
+        "rowGain": -1,
+        "progressScore": 2,
+        "ticks": 10,
+        "finalPosition": {
+          "x": -2.2449999999999974,
+          "y": 0,
+          "z": 6
+        }
+      },
+      "LEFT": {
+        "requestedAction": "LEFT",
+        "executedAction": "LEFT",
+        "accepted": true,
+        "vetoed": false,
+        "safe": true,
+        "death": null,
+        "captures": 0,
+        "rowGain": 0,
+        "progressScore": 2,
+        "ticks": 10,
+        "finalPosition": {
+          "x": -3.226666666666664,
+          "y": 0,
+          "z": 5
+        }
+      },
+      "RIGHT": {
+        "requestedAction": "RIGHT",
+        "executedAction": "RIGHT",
+        "accepted": true,
+        "vetoed": false,
+        "safe": true,
+        "death": null,
+        "captures": 0,
+        "rowGain": 0,
+        "progressScore": 1,
+        "ticks": 10,
+        "finalPosition": {
+          "x": -1.2266666666666641,
+          "y": 0,
+          "z": 5
+        }
+      },
+      "WAIT": {
+        "requestedAction": "WAIT",
+        "executedAction": "WAIT",
+        "accepted": true,
+        "vetoed": false,
+        "safe": true,
+        "death": null,
+        "captures": 0,
+        "rowGain": 0,
+        "progressScore": 2,
+        "ticks": 10,
+        "finalPosition": {
+          "x": -2.061666666666662,
+          "y": 0,
+          "z": 5
+        }
+      }
+    },
+    "local": {
+      "requestedAction": "LOCAL",
+      "executedAction": "WAIT",
+      "accepted": true,
+      "vetoed": false,
+      "safe": true,
+      "death": null,
+      "captures": 0,
+      "rowGain": 0,
+      "progressScore": 2,
+      "ticks": 10,
+      "finalPosition": {
+        "x": -2.061666666666662,
+        "y": 0,
+        "z": 5
+      }
+    },
+    "questions": {
+      "action": {
+        "type": "choice",
+        "instructions": "Select a legal action that survives the ten-tick horizon and makes useful progress toward an open portal. If local candidate predictions are supplied, use them: prefer surviving candidates, then higher progressScore. A prediction is computed by local game physics, not another model. Return your chosen action.",
+        "criteria": {
+          "UP": "UP",
+          "DOWN": "DOWN",
+          "LEFT": "LEFT",
+          "RIGHT": "RIGHT",
+          "WAIT": "WAIT"
+        }
+      }
+    }
+  }
+]

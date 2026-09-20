@@ -1,0 +1,22 @@
+{
+  "geometry": {
+    "requests": 6,
+    "rawSafe": 3,
+    "rawBestProgress": 2,
+    "shieldedSafe": 6,
+    "shieldedBestProgress": 2,
+    "shieldVetoes": 4,
+    "medianLatencyMs": 401.61595700192265
+  },
+  "supported": {
+    "requests": 6,
+    "rawSafe": 6,
+    "rawBestProgress": 6,
+    "shieldedSafe": 6,
+    "shieldedBestProgress": 5,
+    "shieldVetoes": 1,
+    "medianLatencyMs": 325.5765510039055
+  },
+  "reportedCostTotal": 0.00179865,
+  "completedAt": "2026-09-20T19:53:35.339689+00:00"
+}

@@ -1,0 +1,406 @@
+[
+  {
+    "speed": 1,
+    "latency": 250,
+    "phase": 0,
+    "seconds": 180,
+    "captures": 9,
+    "deaths": 2,
+    "maxLevel": 2,
+    "bestStreak": 5,
+    "requests": 683,
+    "causes": {
+      "drown": 2
+    },
+    "failures": [
+      {
+        "type": "drown",
+        "level": 1,
+        "position": {
+          "x": 4.145000000000028,
+          "y": 0,
+          "z": 1
+        },
+        "steps": [
+          {
+            "stateKey": "z3:pdx-5:spd0",
+            "action": "WAIT",
+            "x": 3.631666666666692,
+            "z": 3,
+            "timestamp": 79766.66666666667
+          },
+          {
+            "stateKey": "z3:pdx-5:spd0",
+            "action": "WAIT",
+            "x": 4.005000000000027,
+            "z": 3,
+            "timestamp": 80000
+          },
+          {
+            "stateKey": "z3:pdx-5:spd0",
+            "action": "UP",
+            "x": 4.325000000000024,
+            "z": 3,
+            "timestamp": 80200
+          },
+          {
+            "stateKey": "z2:pdx-5:spd0",
+            "action": "UP",
+            "x": 4.145000000000028,
+            "z": 2,
+            "timestamp": 80550
+          }
+        ]
+      },
+      {
+        "type": "drown",
+        "level": 1,
+        "position": {
+          "x": 4.5500000000000345,
+          "y": 0,
+          "z": 2
+        },
+        "steps": [
+          {
+            "stateKey": "z3:pdx-5:spd0",
+            "action": "WAIT",
+            "x": 3.510000000000037,
+            "z": 3,
+            "timestamp": 103950
+          },
+          {
+            "stateKey": "z3:pdx-5:spd0",
+            "action": "WAIT",
+            "x": 3.830000000000039,
+            "z": 3,
+            "timestamp": 104150
+          },
+          {
+            "stateKey": "z3:pdx-5:spd0",
+            "action": "WAIT",
+            "x": 4.176666666666705,
+            "z": 3,
+            "timestamp": 104366.66666666667
+          },
+          {
+            "stateKey": "z3:pdx-5:spd0",
+            "action": "UP",
+            "x": 4.5500000000000345,
+            "z": 3,
+            "timestamp": 104600
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "speed": 1,
+    "latency": 250,
+    "phase": 2,
+    "seconds": 180,
+    "captures": 9,
+    "deaths": 2,
+    "maxLevel": 2,
+    "bestStreak": 5,
+    "requests": 684,
+    "causes": {
+      "timeout": 1,
+      "drown": 1
+    },
+    "failures": [
+      {
+        "type": "timeout",
+        "level": 1,
+        "position": {
+          "x": 1.3700000000000605,
+          "y": 0,
+          "z": 4
+        },
+        "steps": [
+          {
+            "stateKey": "z3:pdx-5:spd0",
+            "action": "DOWN",
+            "x": 2.453333333333392,
+            "z": 3,
+            "timestamp": 84250
+          },
+          {
+            "stateKey": "z4:pdx-5:spd0",
+            "action": "WAIT",
+            "x": 2.193333333333394,
+            "z": 4,
+            "timestamp": 84600
+          },
+          {
+            "stateKey": "z4:pdx-5:spd0",
+            "action": "WAIT",
+            "x": 1.9333333333333953,
+            "z": 4,
+            "timestamp": 84800
+          },
+          {
+            "stateKey": "z4:pdx-5:spd0",
+            "action": "WAIT",
+            "x": 1.651666666666728,
+            "z": 4,
+            "timestamp": 85016.66666666667
+          }
+        ]
+      },
+      {
+        "type": "drown",
+        "level": 1,
+        "position": {
+          "x": 4.623333333333363,
+          "y": 0,
+          "z": 2
+        },
+        "steps": [
+          {
+            "stateKey": "z3:pdx-5:spd0",
+            "action": "WAIT",
+            "x": 3.5833333333333672,
+            "z": 3,
+            "timestamp": 101550
+          },
+          {
+            "stateKey": "z3:pdx-5:spd0",
+            "action": "WAIT",
+            "x": 3.9033333333333693,
+            "z": 3,
+            "timestamp": 101750
+          },
+          {
+            "stateKey": "z3:pdx-5:spd0",
+            "action": "WAIT",
+            "x": 4.250000000000034,
+            "z": 3,
+            "timestamp": 101966.66666666667
+          },
+          {
+            "stateKey": "z3:pdx-5:spd0",
+            "action": "UP",
+            "x": 4.623333333333363,
+            "z": 3,
+            "timestamp": 102200
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "speed": 1,
+    "latency": 250,
+    "phase": 5,
+    "seconds": 180,
+    "captures": 9,
+    "deaths": 2,
+    "maxLevel": 2,
+    "bestStreak": 5,
+    "requests": 674,
+    "causes": {
+      "timeout": 1,
+      "drown": 1
+    },
+    "failures": [
+      {
+        "type": "timeout",
+        "level": 1,
+        "position": {
+          "x": 1.8633333333333948,
+          "y": 0,
+          "z": 4
+        },
+        "steps": [
+          {
+            "stateKey": "z3:pdx-5:spd0",
+            "action": "LEFT",
+            "x": 3.1116666666667236,
+            "z": 3,
+            "timestamp": 80916.66666666667
+          },
+          {
+            "stateKey": "z3:pdx-5:spd0",
+            "action": "DOWN",
+            "x": 2.405000000000059,
+            "z": 3,
+            "timestamp": 81250
+          },
+          {
+            "stateKey": "z4:pdx-5:spd0",
+            "action": "WAIT",
+            "x": 2.145000000000061,
+            "z": 4,
+            "timestamp": 81600
+          },
+          {
+            "stateKey": "z4:pdx-5:spd0",
+            "action": "WAIT",
+            "x": 1.8850000000000615,
+            "z": 4,
+            "timestamp": 81800
+          }
+        ]
+      },
+      {
+        "type": "drown",
+        "level": 1,
+        "position": {
+          "x": 4.636666666666671,
+          "y": 0,
+          "z": 2
+        },
+        "steps": [
+          {
+            "stateKey": "z3:pdx-5:spd0",
+            "action": "WAIT",
+            "x": 3.596666666666675,
+            "z": 3,
+            "timestamp": 98816.66666666667
+          },
+          {
+            "stateKey": "z3:pdx-5:spd0",
+            "action": "WAIT",
+            "x": 3.970000000000011,
+            "z": 3,
+            "timestamp": 99050
+          },
+          {
+            "stateKey": "z3:pdx-5:spd0",
+            "action": "WAIT",
+            "x": 4.290000000000008,
+            "z": 3,
+            "timestamp": 99250
+          },
+          {
+            "stateKey": "z3:pdx-5:spd0",
+            "action": "UP",
+            "x": 4.636666666666671,
+            "z": 3,
+            "timestamp": 99466.66666666667
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "speed": 2,
+    "latency": 250,
+    "phase": 0,
+    "seconds": 180,
+    "captures": 16,
+    "deaths": 0,
+    "maxLevel": 4,
+    "bestStreak": 16,
+    "requests": 0,
+    "causes": {},
+    "failures": []
+  },
+  {
+    "speed": 2,
+    "latency": 250,
+    "phase": 2,
+    "seconds": 180,
+    "captures": 12,
+    "deaths": 1,
+    "maxLevel": 3,
+    "bestStreak": 8,
+    "requests": 0,
+    "causes": {
+      "drown": 1
+    },
+    "failures": [
+      {
+        "type": "drown",
+        "level": 1,
+        "position": {
+          "x": 4.948333333333356,
+          "y": 0,
+          "z": 1
+        },
+        "steps": [
+          {
+            "stateKey": "z3:pdx-5:spd0",
+            "action": "WAIT",
+            "x": 4.600000000000025,
+            "z": 3,
+            "timestamp": 36783.333333333336
+          },
+          {
+            "stateKey": "z3:pdx-5:spd0",
+            "action": "WAIT",
+            "x": 4.840000000000023,
+            "z": 3,
+            "timestamp": 36850
+          },
+          {
+            "stateKey": "z3:pdx-5:spd0",
+            "action": "UP",
+            "x": 5.053333333333354,
+            "z": 3,
+            "timestamp": 36916.666666666664
+          },
+          {
+            "stateKey": "z2:pdx-5:spd0",
+            "action": "UP",
+            "x": 4.948333333333356,
+            "z": 2,
+            "timestamp": 37050
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "speed": 2,
+    "latency": 250,
+    "phase": 5,
+    "seconds": 180,
+    "captures": 13,
+    "deaths": 0,
+    "maxLevel": 3,
+    "bestStreak": 13,
+    "requests": 0,
+    "causes": {},
+    "failures": []
+  },
+  {
+    "speed": 5,
+    "latency": 250,
+    "phase": 0,
+    "seconds": 180,
+    "captures": 15,
+    "deaths": 0,
+    "maxLevel": 4,
+    "bestStreak": 15,
+    "requests": 0,
+    "causes": {},
+    "failures": []
+  },
+  {
+    "speed": 5,
+    "latency": 250,
+    "phase": 2,
+    "seconds": 180,
+    "captures": 15,
+    "deaths": 0,
+    "maxLevel": 4,
+    "bestStreak": 15,
+    "requests": 0,
+    "causes": {},
+    "failures": []
+  },
+  {
+    "speed": 5,
+    "latency": 250,
+    "phase": 5,
+    "seconds": 180,
+    "captures": 15,
+    "deaths": 0,
+    "maxLevel": 4,
+    "bestStreak": 15,
+    "requests": 0,
+    "causes": {},
+    "failures": []
+  }
+]

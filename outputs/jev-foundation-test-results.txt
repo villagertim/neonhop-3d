@@ -1,0 +1,214 @@
+
+> neonhop-3d@1.0.0 test
+> node --test tests/*.test.js && python3 -m unittest discover -s tests -p "test_*.py"
+
+TAP version 13
+# Subtest: safe proposal is recorded only when consumed by physics
+ok 1 - safe proposal is recorded only when consumed by physics
+  ---
+  duration_ms: 96.542582
+  ...
+# Subtest: revalidates safety during response and never executes stale UP
+ok 2 - revalidates safety during response and never executes stale UP
+  ---
+  duration_ms: 11.052756
+  ...
+# Subtest: revalidates safety after response and never executes stale UP
+ok 3 - revalidates safety after response and never executes stale UP
+  ---
+  duration_ms: 7.736763
+  ...
+# Subtest: stop invalidates in-flight reply without post-cancel side effects
+ok 4 - stop invalidates in-flight reply without post-cancel side effects
+  ---
+  duration_ms: 19.295104
+  ...
+# Subtest: takeover invalidates in-flight reply without post-cancel side effects
+ok 5 - takeover invalidates in-flight reply without post-cancel side effects
+  ---
+  duration_ms: 7.242695
+  ...
+# Subtest: pauseResume invalidates in-flight reply without post-cancel side effects
+ok 6 - pauseResume invalidates in-flight reply without post-cancel side effects
+  ---
+  duration_ms: 7.344484
+  ...
+# Subtest: death invalidates in-flight reply without post-cancel side effects
+ok 7 - death invalidates in-flight reply without post-cancel side effects
+  ---
+  duration_ms: 8.852142
+  ...
+# Subtest: portal invalidates in-flight reply without post-cancel side effects
+ok 8 - portal invalidates in-flight reply without post-cancel side effects
+  ---
+  duration_ms: 7.412727
+  ...
+# Subtest: level invalidates in-flight reply without post-cancel side effects
+ok 9 - level invalidates in-flight reply without post-cancel side effects
+  ---
+  duration_ms: 7.79143
+  ...
+# Subtest: restart invalidates in-flight reply without post-cancel side effects
+ok 10 - restart invalidates in-flight reply without post-cancel side effects
+  ---
+  duration_ms: 9.696815
+  ...
+# Subtest: speed invalidates in-flight reply without post-cancel side effects
+ok 11 - speed invalidates in-flight reply without post-cancel side effects
+  ---
+  duration_ms: 13.251996
+  ...
+# Subtest: brain invalidates in-flight reply without post-cancel side effects
+ok 12 - brain invalidates in-flight reply without post-cancel side effects
+  ---
+  duration_ms: 8.07085
+  ...
+# Subtest: takeover removes AI intent and preserves first human movement
+ok 13 - takeover removes AI intent and preserves first human movement
+  ---
+  duration_ms: 3.937339
+  ...
+# Subtest: remote deadline releases a hung request and uses local fallback
+ok 14 - remote deadline releases a hung request and uses local fallback
+  ---
+  duration_ms: 107.02955
+  ...
+# Subtest: provider error uses local fallback and accelerated mode skips provider
+ok 15 - provider error uses local fallback and accelerated mode skips provider
+  ---
+  duration_ms: 10.536714
+  ...
+# Subtest: one abort signal and deadline cover gateway and direct fallback
+ok 16 - one abort signal and deadline cover gateway and direct fallback
+  ---
+  duration_ms: 110.480796
+  ...
+# Subtest: old request completion cannot clear a newer request busy state
+ok 17 - old request completion cannot clear a newer request busy state
+  ---
+  duration_ms: 4.775222
+  ...
+# Subtest: rapid stop/start keeps only one scheduled loop
+ok 18 - rapid stop/start keeps only one scheduled loop
+  ---
+  duration_ms: 3.131049
+  ...
+# Subtest: veto does not reset streak or penalize executed history; actual death does
+ok 19 - veto does not reset streak or penalize executed history; actual death does
+  ---
+  duration_ms: 6.692075
+  ...
+# Subtest: reset removes current and legacy memory and refreshes telemetry
+ok 20 - reset removes current and legacy memory and refreshes telemetry
+  ---
+  duration_ms: 3.322739
+  ...
+# Subtest: accepted remote decisions retain model threat and probability telemetry
+ok 21 - accepted remote decisions retain model threat and probability telemetry
+  ---
+  duration_ms: 6.774183
+  ...
+# Subtest: hazardous lanes never wait for a provider request
+ok 22 - hazardous lanes never wait for a provider request
+  ---
+  duration_ms: 4.709012
+  ...
+# Subtest: provider failures back off until retry is allowed
+ok 23 - provider failures back off until retry is allowed
+  ---
+  duration_ms: 4.194708
+  ...
+# Subtest: local autonomy consumes every idle simulation tick within one render frame
+ok 24 - local autonomy consumes every idle simulation tick within one render frame
+  ---
+  duration_ms: 4.270489
+  ...
+# Subtest: unproven escape prefers immediate survival to diving into water
+ok 25 - unproven escape prefers immediate survival to diving into water
+  ---
+  duration_ms: 11.930101
+  ...
+# Subtest: approaching traffic kills an idle road player once and respawns
+ok 26 - approaching traffic kills an idle road player once and respawns
+  ---
+  duration_ms: 25.903292
+  ...
+# Subtest: collision precedes queued input and final death does not repeat
+ok 27 - collision precedes queued input and final death does not repeat
+  ---
+  duration_ms: 11.498708
+  ...
+# Subtest: other rows and banks remain safe; landing collision remains active
+ok 28 - other rows and banks remain safe; landing collision remains active
+  ---
+  duration_ms: 5.042035
+  ...
+# Subtest: controlled real-time loop advances 1x, 2x and 5x using fixed steps
+ok 29 - controlled real-time loop advances 1x, 2x and 5x using fixed steps
+  ---
+  duration_ms: 36.600918
+  ...
+# Subtest: hop duration remains eight simulation ticks at every speed
+ok 30 - hop duration remains eight simulation ticks at every speed
+  ---
+  duration_ms: 2.512742
+  ...
+# Subtest: one gateway request decodes all four answers and keeps distributions and usage
+ok 31 - one gateway request decodes all four answers and keeps distributions and usage
+  ---
+  duration_ms: 98.894325
+  ...
+# Subtest: veto preserves Jev evidence independently of the executed local action
+ok 32 - veto preserves Jev evidence independently of the executed local action
+  ---
+  duration_ms: 8.980114
+  ...
+# Subtest: legacy answers preserve zero values and malformed actions are rejected
+ok 33 - legacy answers preserve zero values and malformed actions are rejected
+  ---
+  duration_ms: 5.359947
+  ...
+# Subtest: direct fallback also recognizes the documented answers envelope
+ok 34 - direct fallback also recognizes the documented answers envelope
+  ---
+  duration_ms: 4.908518
+  ...
+# Subtest: captured river hesitation now takes the verified forward crossing
+ok 35 - captured river hesitation now takes the verified forward crossing
+  ---
+  duration_ms: 96.74574
+  ...
+# Subtest: short traffic gap supports a landing and a next-tick exit
+ok 36 - short traffic gap supports a landing and a next-tick exit
+  ---
+  duration_ms: 6.63115
+  ...
+# Subtest: predictor timing agrees with physics hop completion and speed scaling
+ok 37 - predictor timing agrees with physics hop completion and speed scaling
+  ---
+  duration_ms: 6.366107
+  ...
+# Subtest: forward priority still waits when the landing tile is fatal
+ok 38 - forward priority still waits when the landing tile is fatal
+  ---
+  duration_ms: 5.104512
+  ...
+# Subtest: safe Jev recommendations remain observable instead of being replaced by local progress preferences
+ok 39 - safe Jev recommendations remain observable instead of being replaced by local progress preferences
+  ---
+  duration_ms: 19.534022
+  ...
+1..39
+# tests 39
+# suites 0
+# pass 39
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1765.313423
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.738s
+
+OK

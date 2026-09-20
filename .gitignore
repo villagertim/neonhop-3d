@@ -16,3 +16,9 @@ __pycache__/
 .idea/
 .~lock.*#
 *~
+
+# Continuously written runtime sessions (keep on the workstation)
+outputs/jev-supported-live/
+
+# Read-only third-party source inspection copy
+outputs/laya-review/source/

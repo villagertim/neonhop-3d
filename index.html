@@ -18,13 +18,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20260920-supported-v1">
     
     <!-- ES6 Module Import Map for Three.js r160 -->
     <script type="importmap">
       {
         "imports": {
-          "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+          "/src/supportedJevAgent.js": "/src/supportedJevAgent.js?v=20260920-supported-v1",
+          "/src/candidateForecasts.js": "/src/candidateForecasts.js?v=20260920-supported-v1",
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "/src/gameEngine.js": "/src/gameEngine.js?v=20260920-supported-v1",
+          "/src/renderer.js": "/src/renderer.js?v=20260920-supported-v1",
+          "/src/soundEngine.js": "/src/soundEngine.js?v=20260920-supported-v1",
+          "/src/inputManager.js": "/src/inputManager.js?v=20260920-supported-v1",
+          "/src/leaderboard.js": "/src/leaderboard.js?v=20260920-supported-v1",
+          "/src/jevAgent.js": "/src/jevAgent.js?v=20260920-supported-v1",
+          "/src/physicsOracle.js": "/src/physicsOracle.js?v=20260920-supported-v1",
+          "/src/learningBrain.js": "/src/learningBrain.js?v=20260920-supported-v1",
+          "/src/jevEvaluator.js": "/src/jevEvaluator.js?v=20260920-supported-v1"
         }
       }
     </script>
@@ -113,7 +124,7 @@
                     <div class="telemetry-header">
                         <div class="telemetry-title">
                             <span class="ai-live-pulse"></span>
-                            <span class="hud-label">AI SPECTATOR // JEV-1.13</span>
+                            <span class="hud-label">AI SPECTATOR</span>
                         </div>
                         <button id="btn-take-control" class="btn-micro" title="Take player control">TAKE CONTROL</button>
                     </div>
@@ -148,10 +159,11 @@
                             <span id="hud-streak-val" class="noul-val">0 / 100</span>
                         </div>
                     </div>
+                    <p id="supported-status" style="font-size:11px;line-height:1.5">Jev + local forecasts · safety checked</p>
                     <div class="telemetry-footer">
                         <span id="hud-source" class="footer-meta">ENGINE: JEV-1.13</span>
                         <span id="hud-latency" class="footer-meta">LATENCY: -- ms</span>
-                        <span id="hud-count" class="footer-meta">HOPS: 0</span>
+                        <span id="hud-count" class="footer-meta">DECISIONS: 0</span>
                     </div>
                 </div>
 
@@ -162,7 +174,7 @@
                         <p class="subtitle">CHOOSE YOUR PLAYSTYLE</p>
                         <div class="start-actions">
                             <button id="btn-start-game" class="btn btn-neon-glow">START GAME</button>
-                            <button id="btn-watch-ai" class="btn btn-neon-ai">WATCH AI PLAY (JEV)</button>
+                            <button id="btn-watch-ai" class="btn btn-neon-ai">WATCH JEV + LOCAL LOGIC</button>
                         </div>
                     </div>
                 </div>
@@ -201,6 +213,6 @@
     </div>
 
     <!-- Modular Bootstrap Script Entry -->
-    <script type="module" src="src/main.js"></script>
+    <script type="module" src="src/main.js?v=20260920-supported-v1"></script>
 </body>
 </html>

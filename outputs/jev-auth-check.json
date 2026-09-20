@@ -1,0 +1,5 @@
+{
+  "provider": "openrouter",
+  "check": "GET /api/v1/key (no inference)",
+  "status": 401
+}

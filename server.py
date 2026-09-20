@@ -8,10 +8,12 @@ and OpenRouter.ai alpha decisions API, referencing the workspace's local .env fi
 import http.server
 import json
 import os
+import re
 import sys
 import urllib.request
 import urllib.error
-import socket
+from pathlib import Path
+from urllib.parse import unquote, urlsplit
 
 DIRECTORY = os.path.dirname(os.path.abspath(__file__))
 
@@ -73,17 +75,73 @@ class NeonHopGatewayHandler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=DIRECTORY, **kwargs)
 
+    PUBLIC_FILES = frozenset({
+        "/index.html", "/styles.css",
+        *(f"/src/{name}.js" for name in (
+            "main", "gameEngine", "renderer", "soundEngine", "inputManager",
+            "leaderboard", "jevAgent", "jevOnlyAgent", "supportedJevAgent", "candidateForecasts", "physicsOracle", "learningBrain", "jevEvaluator"
+        ))
+    })
+
+    def _trusted_host(self):
+        port = self.server.server_port
+        hosts = {f"localhost:{port}", f"127.0.0.1:{port}"}
+        if port == 80:
+            hosts.update({"localhost", "127.0.0.1"})
+        values = self.headers.get_all("Host", [])
+        return len(values) == 1 and values[0] in hosts
+
+    def _check_host(self):
+        if not self._trusted_host():
+            self.send_error(403, "Untrusted Host")
+            return False
+        return True
+
+    def _check_origin(self):
+        if not self._check_host():
+            return False
+        if self.headers.get_all("Origin", []) != [f"http://{self.headers['Host']}"]:
+            self.send_error(403, "Same-origin browser requests required")
+            return False
+        return True
+
     def _set_cors_headers(self):
-        self.send_header("Access-Control-Allow-Origin", "*")
-        self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
-        self.send_header("Access-Control-Allow-Headers", "Content-Type, Authorization")
+        # The application is same-origin; no cross-origin access is granted.
+        self.send_header("Vary", "Origin")
+
+    def end_headers(self):
+        # This is a development gateway: source edits must be revalidated on reload.
+        self.send_header("Cache-Control", "no-cache")
+        super().end_headers()
 
     def do_OPTIONS(self):
+        if not self._check_origin():
+            return
         self.send_response(204)
-        self._set_cors_headers()
         self.end_headers()
 
+    def send_head(self):
+        # Both GET and inherited HEAD pass through the same asset policy.
+        if not self._check_host():
+            return None
+        path = unquote(urlsplit(self.path).path)
+        if path == "/":
+            path = "/index.html"
+        if path not in self.PUBLIC_FILES:
+            self.send_error(404, "Asset not found")
+            return None
+        root = Path(DIRECTORY).resolve()
+        target = (root / path.lstrip("/")).resolve()
+        # Reject directories and links, including links to private files in the root.
+        if (not target.is_relative_to(root) or target != root / path.lstrip("/")
+                or not target.is_file()):
+            self.send_error(404, "Asset not found")
+            return None
+        return super().send_head()
+
     def do_GET(self):
+        if not self._check_host():
+            return
         if self.path == "/api/jev/health":
             self.send_response(200)
             self.send_header("Content-Type", "application/json")
@@ -92,7 +150,6 @@ class NeonHopGatewayHandler(http.server.SimpleHTTPRequestHandler):
             status = {
                 "status": "online",
                 "env_file_loaded": ENV_LOADED,
-                "env_file_path": os.path.join(DIRECTORY, ".env"),
                 "active_provider": ACTIVE_PROVIDER,
                 "provider_name": PROVIDER_NAME,
                 "typesafe_key_configured": bool(TYPESAFE_API_KEY),
@@ -107,25 +164,59 @@ class NeonHopGatewayHandler(http.server.SimpleHTTPRequestHandler):
         super().do_GET()
 
     def do_POST(self):
-        if self.path == "/api/jev/decision":
-            content_length = int(self.headers.get("Content-Length", 0))
-            body = self.rfile.read(content_length).decode("utf-8")
-
+        if not self._check_origin():
+            return
+        if self.path == "/api/jev/baseline/event":
+            if self.headers.get_content_type() != "application/json":
+                self.send_error(415, "JSON required")
+                return
             try:
-                data = json.loads(body)
-            except Exception as e:
-                self.send_response(400)
-                self.send_header("Content-Type", "application/json")
-                self._set_cors_headers()
-                self.end_headers()
-                self.wfile.write(json.dumps({"error": f"Invalid JSON payload: {str(e)}"}).encode("utf-8"))
+                size = int(self.headers.get("Content-Length", 0))
+                if not 0 < size <= 65536:
+                    raise ValueError("Invalid event size")
+                event = json.loads(self.rfile.read(size))
+                session = event.get("sessionId", "")
+                if (not isinstance(session, str) or not re.fullmatch(r"[A-Za-z0-9-]{1,80}", session)
+                        or event.get("mode") not in {"jev-only-frozen-time", "jev-supported"}):
+                    raise ValueError("Invalid baseline event")
+            except (ValueError, AttributeError, UnicodeError):
+                self.send_error(400, "Invalid baseline event")
+                return
+            try:
+                directory = Path(DIRECTORY) / "outputs" / ("jev-supported-live" if event["mode"] == "jev-supported" else "jev-only-live")
+                directory.mkdir(parents=True, exist_ok=True)
+                with (directory / f"{session}.jsonl").open("a", encoding="utf-8") as stream:
+                    stream.write(json.dumps(event) + "\n")
+            except OSError:
+                self.send_error(500, "Could not record baseline event")
+                return
+            self.send_response(204)
+            self.end_headers()
+            return
+        if self.path == "/api/jev/decision":
+            if self.headers.get_content_type() != "application/json":
+                self.send_error(415, "JSON required")
+                return
+            try:
+                content_length = int(self.headers.get("Content-Length", 0))
+                if not 0 < content_length <= 65536:
+                    self.send_error(413, "Invalid payload size")
+                    return
+                data = json.loads(self.rfile.read(content_length).decode("utf-8"))
+                if not isinstance(data, dict) or not isinstance(data.get("model", ""), str):
+                    raise ValueError("Expected an object with a string model")
+                if data.get("provider") not in (None, "typesafe", "openrouter"):
+                    raise ValueError("Invalid provider")
+            except (ValueError, UnicodeError):
+                self.send_error(400, "Invalid JSON payload")
                 return
 
             # Client Authorization header override
             custom_auth = self.headers.get("Authorization", "").replace("Bearer ", "").strip()
 
             # Determine routing target based on key priority
-            if TYPESAFE_API_KEY or (custom_auth and ACTIVE_PROVIDER == "typesafe"):
+            provider = data.get("provider")
+            if provider != "openrouter" and (TYPESAFE_API_KEY or (custom_auth and ACTIVE_PROVIDER == "typesafe")):
                 api_key = custom_auth or TYPESAFE_API_KEY
                 target_url = "https://api.typesafe.ai/v1/systemone"
                 headers = {
@@ -141,7 +232,7 @@ class NeonHopGatewayHandler(http.server.SimpleHTTPRequestHandler):
                     "state": data.get("state", ""),
                     "questions": data.get("questions", {})
                 }
-            elif OPENROUTER_API_KEY or custom_auth:
+            elif provider != "typesafe" and (OPENROUTER_API_KEY or custom_auth):
                 api_key = custom_auth or OPENROUTER_API_KEY
                 target_url = "https://openrouter.ai/api/alpha/decisions"
                 headers = {
@@ -204,28 +295,18 @@ class NeonHopGatewayHandler(http.server.SimpleHTTPRequestHandler):
         self.end_headers()
 
 
-class DualStackServer(http.server.ThreadingHTTPServer):
-    address_family = socket.AF_INET6
+class LocalServer(http.server.ThreadingHTTPServer):
+    allow_reuse_address = True
     daemon_threads = True
 
-    def server_bind(self):
-        try:
-            self.socket.setsockopt(socket.IPPROTO_IPV6, socket.IPV6_V6ONLY, 0)
-        except (AttributeError, OSError):
-            pass
-        self.allow_reuse_address = True
-        super().server_bind()
+
+def create_server(port=PORT):
+    # No wildcard fallback: failure to bind locally must fail closed.
+    return LocalServer(("127.0.0.1", port), NeonHopGatewayHandler)
 
 
 def run():
-    httpd = None
-    try:
-        httpd = DualStackServer(("", PORT), NeonHopGatewayHandler)
-    except Exception as e:
-        class FallbackServer(http.server.ThreadingHTTPServer):
-            allow_reuse_address = True
-            daemon_threads = True
-        httpd = FallbackServer(("", PORT), NeonHopGatewayHandler)
+    httpd = create_server()
 
     banner_line = "=" * 35
     print(banner_line)

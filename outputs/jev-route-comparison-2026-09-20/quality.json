@@ -1,0 +1,314 @@
+[
+  {
+    "stateId": "trajectory-0-tick-0",
+    "variant": "action",
+    "route": "typesafe",
+    "actualModel": "jev-1.13.0",
+    "rawReplay": {
+      "requestedAction": "UP",
+      "executedAction": "UP",
+      "accepted": true,
+      "vetoed": false,
+      "safe": false,
+      "death": "crash",
+      "captures": 0,
+      "rowGain": 0,
+      "progressScore": 0,
+      "ticks": 9,
+      "finalPosition": {
+        "x": 0,
+        "y": 0,
+        "z": 12
+      }
+    },
+    "combined": null
+  },
+  {
+    "stateId": "trajectory-0-tick-0",
+    "variant": "action",
+    "route": "openrouter",
+    "actualModel": "typesafe/jev-1.13-20260917",
+    "rawReplay": {
+      "requestedAction": "UP",
+      "executedAction": "UP",
+      "accepted": true,
+      "vetoed": false,
+      "safe": false,
+      "death": "crash",
+      "captures": 0,
+      "rowGain": 0,
+      "progressScore": 0,
+      "ticks": 9,
+      "finalPosition": {
+        "x": 0,
+        "y": 0,
+        "z": 12
+      }
+    },
+    "combined": null
+  },
+  {
+    "stateId": "trajectory-0-tick-0",
+    "variant": "candidates",
+    "route": "openrouter",
+    "actualModel": "typesafe/jev-1.13-20260917",
+    "rawReplay": {
+      "requestedAction": "UP",
+      "executedAction": "UP",
+      "accepted": true,
+      "vetoed": false,
+      "safe": false,
+      "death": "crash",
+      "captures": 0,
+      "rowGain": 0,
+      "progressScore": 0,
+      "ticks": 9,
+      "finalPosition": {
+        "x": 0,
+        "y": 0,
+        "z": 12
+      }
+    },
+    "combined": {
+      "action": null,
+      "abstained": true,
+      "threshold": 0.8
+    }
+  },
+  {
+    "stateId": "trajectory-0-tick-0",
+    "variant": "candidates",
+    "route": "typesafe",
+    "actualModel": "jev-1.13.0",
+    "rawReplay": {
+      "requestedAction": "UP",
+      "executedAction": "UP",
+      "accepted": true,
+      "vetoed": false,
+      "safe": false,
+      "death": "crash",
+      "captures": 0,
+      "rowGain": 0,
+      "progressScore": 0,
+      "ticks": 9,
+      "finalPosition": {
+        "x": 0,
+        "y": 0,
+        "z": 12
+      }
+    },
+    "combined": {
+      "action": null,
+      "abstained": true,
+      "threshold": 0.8
+    }
+  },
+  {
+    "stateId": "trajectory-0-tick-106",
+    "variant": "action",
+    "route": "openrouter",
+    "actualModel": "typesafe/jev-1.13-20260917",
+    "rawReplay": {
+      "requestedAction": "UP",
+      "executedAction": "UP",
+      "accepted": true,
+      "vetoed": false,
+      "safe": false,
+      "death": "crash",
+      "captures": 0,
+      "rowGain": -1,
+      "progressScore": 0,
+      "ticks": 9,
+      "finalPosition": {
+        "x": 0,
+        "y": 0,
+        "z": 12
+      }
+    },
+    "combined": null
+  },
+  {
+    "stateId": "trajectory-0-tick-106",
+    "variant": "action",
+    "route": "typesafe",
+    "actualModel": "jev-1.13.0",
+    "rawReplay": {
+      "requestedAction": "UP",
+      "executedAction": "UP",
+      "accepted": true,
+      "vetoed": false,
+      "safe": false,
+      "death": "crash",
+      "captures": 0,
+      "rowGain": -1,
+      "progressScore": 0,
+      "ticks": 9,
+      "finalPosition": {
+        "x": 0,
+        "y": 0,
+        "z": 12
+      }
+    },
+    "combined": null
+  },
+  {
+    "stateId": "trajectory-0-tick-106",
+    "variant": "candidates",
+    "route": "typesafe",
+    "actualModel": "jev-1.13.0",
+    "rawReplay": {
+      "requestedAction": "UP",
+      "executedAction": "UP",
+      "accepted": true,
+      "vetoed": false,
+      "safe": false,
+      "death": "crash",
+      "captures": 0,
+      "rowGain": -1,
+      "progressScore": 0,
+      "ticks": 9,
+      "finalPosition": {
+        "x": 0,
+        "y": 0,
+        "z": 12
+      }
+    },
+    "combined": {
+      "action": null,
+      "abstained": true,
+      "threshold": 0.8
+    }
+  },
+  {
+    "stateId": "trajectory-0-tick-106",
+    "variant": "candidates",
+    "route": "openrouter",
+    "actualModel": "typesafe/jev-1.13-20260917",
+    "rawReplay": {
+      "requestedAction": "UP",
+      "executedAction": "UP",
+      "accepted": true,
+      "vetoed": false,
+      "safe": false,
+      "death": "crash",
+      "captures": 0,
+      "rowGain": -1,
+      "progressScore": 0,
+      "ticks": 9,
+      "finalPosition": {
+        "x": 0,
+        "y": 0,
+        "z": 12
+      }
+    },
+    "combined": {
+      "action": null,
+      "abstained": true,
+      "threshold": 0.8
+    }
+  },
+  {
+    "stateId": "trajectory-0-tick-392",
+    "variant": "action",
+    "route": "typesafe",
+    "actualModel": "jev-1.13.0",
+    "rawReplay": {
+      "requestedAction": "UP",
+      "executedAction": "UP",
+      "accepted": true,
+      "vetoed": false,
+      "safe": false,
+      "death": "drown",
+      "captures": 0,
+      "rowGain": -7,
+      "progressScore": 0,
+      "ticks": 9,
+      "finalPosition": {
+        "x": 0,
+        "y": 0,
+        "z": 12
+      }
+    },
+    "combined": null
+  },
+  {
+    "stateId": "trajectory-0-tick-392",
+    "variant": "action",
+    "route": "openrouter",
+    "actualModel": "typesafe/jev-1.13-20260917",
+    "rawReplay": {
+      "requestedAction": "UP",
+      "executedAction": "UP",
+      "accepted": true,
+      "vetoed": false,
+      "safe": false,
+      "death": "drown",
+      "captures": 0,
+      "rowGain": -7,
+      "progressScore": 0,
+      "ticks": 9,
+      "finalPosition": {
+        "x": 0,
+        "y": 0,
+        "z": 12
+      }
+    },
+    "combined": null
+  },
+  {
+    "stateId": "trajectory-0-tick-392",
+    "variant": "candidates",
+    "route": "openrouter",
+    "actualModel": "typesafe/jev-1.13-20260917",
+    "rawReplay": {
+      "requestedAction": "UP",
+      "executedAction": "UP",
+      "accepted": true,
+      "vetoed": false,
+      "safe": false,
+      "death": "drown",
+      "captures": 0,
+      "rowGain": -7,
+      "progressScore": 0,
+      "ticks": 9,
+      "finalPosition": {
+        "x": 0,
+        "y": 0,
+        "z": 12
+      }
+    },
+    "combined": {
+      "action": null,
+      "abstained": true,
+      "threshold": 0.8
+    }
+  },
+  {
+    "stateId": "trajectory-0-tick-392",
+    "variant": "candidates",
+    "route": "typesafe",
+    "actualModel": "jev-1.13.0",
+    "rawReplay": {
+      "requestedAction": "UP",
+      "executedAction": "UP",
+      "accepted": true,
+      "vetoed": false,
+      "safe": false,
+      "death": "drown",
+      "captures": 0,
+      "rowGain": -7,
+      "progressScore": 0,
+      "ticks": 9,
+      "finalPosition": {
+        "x": 0,
+        "y": 0,
+        "z": 12
+      }
+    },
+    "combined": {
+      "action": null,
+      "abstained": true,
+      "threshold": 0.8
+    }
+  }
+]

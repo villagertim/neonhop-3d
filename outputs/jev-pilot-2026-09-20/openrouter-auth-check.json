@@ -1,0 +1,7 @@
+{
+  "checked_at": "2026-09-20T18:36:43.927014+00:00",
+  "route": "openrouter",
+  "check": "GET /api/v1/key; no inference",
+  "key_configured": true,
+  "http_status": 401
+}

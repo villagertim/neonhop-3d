@@ -4,7 +4,7 @@ import { Renderer } from './renderer.js';
 import { SoundEngine } from './soundEngine.js';
 import { InputManager } from './inputManager.js';
 import { Leaderboard } from './leaderboard.js';
-import { JevAgent } from './jevAgent.js';
+import { SupportedJevAgent } from './supportedJevAgent.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Instantiate the loop engine, WebGL Renderer, Synthesizer, and persistent subsystems
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sound = new SoundEngine();
     const leaderboard = new Leaderboard();
     const input = new InputManager(engine);
-    const jevAgent = new JevAgent(engine);
+    const jevAgent = new SupportedJevAgent(engine);
 
     // Expose sound engine and Jev Agent for debugging and inspection
     window.soundEngine = sound;
@@ -156,9 +156,17 @@ document.addEventListener('DOMContentLoaded', () => {
             if (hudStreakVal) hudStreakVal.textContent = `${data.streak} / 100 (Best: ${data.bestStreak || data.streak})`;
         }
 
-        if (hudSource) hudSource.textContent = `ENGINE: ${data.source.includes('LOCAL') ? 'LOCAL (JEV SCHEMA)' : 'JEV-1.13'}`;
-        if (hudLatency) hudLatency.textContent = `LATENCY: ${data.latency} ms`;
-        if (hudCount) hudCount.textContent = `HOPS: ${data.decisionCount || 0}`;
+        if (hudSource) {
+            const source = data.safetyVetoed ? 'LOCAL / JEV VETOED'
+                : data.source.includes('LOCAL') ? 'LOCAL POLICY'
+                : data.modelAction ? 'JEV / SAFETY CHECKED' : data.source;
+            hudSource.textContent = `ENGINE: ${source}`;
+            hudSource.title = data.source;
+        }
+        if (hudLatency) hudLatency.textContent = `DECISION DELAY: ${data.latency} ms`;
+        const status = document.getElementById('supported-status');
+        if (status) status.textContent = data.supportStatus || 'Jev + local forecasts · safety checked';
+        if (hudCount) hudCount.textContent = `DECISIONS: ${data.decisionCount || 0}`;
     };
 
     engine.onGameOver = () => {
@@ -334,14 +342,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 7b. Simulation Speed Controls & Learned Brain Management
-    let simSpeed = 1;
     function setSimSpeed(mult) {
-        simSpeed = mult;
+        engine.setSimulationSpeed(mult);
+        mult = engine.simulationSpeed;
         [btnSpeed1x, btnSpeed2x, btnSpeed5x].forEach(b => b?.classList.remove('active'));
         if (mult === 1) btnSpeed1x?.classList.add('active');
         if (mult === 2) btnSpeed2x?.classList.add('active');
         if (mult === 5) btnSpeed5x?.classList.add('active');
-        engine.fixedDeltaTime = (1 / 60) * mult;
     }
 
     if (btnSpeed1x) btnSpeed1x.addEventListener('click', () => setSimSpeed(1));
@@ -351,7 +358,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btnResetBrain) {
         btnResetBrain.addEventListener('click', () => {
             if (confirm('Reset learned memory, Q-tables, and streak counters?')) {
-                jevAgent.brain.clear();
+                jevAgent.resetBrain();
                 if (hudStreakVal) hudStreakVal.textContent = '0 / 100';
                 if (hudStreakBar) hudStreakBar.style.width = '0%';
                 alert('Brain memory cleared.');

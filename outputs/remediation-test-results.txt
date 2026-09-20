@@ -1,0 +1,149 @@
+
+> neonhop-3d@1.0.0 test
+> node --test tests/*.test.js && python3 -m unittest discover -s tests -p "test_*.py"
+
+TAP version 13
+# Subtest: safe proposal is recorded only when consumed by physics
+ok 1 - safe proposal is recorded only when consumed by physics
+  ---
+  duration_ms: 74.870908
+  ...
+# Subtest: revalidates safety during response and never executes stale UP
+ok 2 - revalidates safety during response and never executes stale UP
+  ---
+  duration_ms: 10.640989
+  ...
+# Subtest: revalidates safety after response and never executes stale UP
+ok 3 - revalidates safety after response and never executes stale UP
+  ---
+  duration_ms: 5.886352
+  ...
+# Subtest: stop invalidates in-flight reply without post-cancel side effects
+ok 4 - stop invalidates in-flight reply without post-cancel side effects
+  ---
+  duration_ms: 14.553568
+  ...
+# Subtest: takeover invalidates in-flight reply without post-cancel side effects
+ok 5 - takeover invalidates in-flight reply without post-cancel side effects
+  ---
+  duration_ms: 4.474362
+  ...
+# Subtest: pauseResume invalidates in-flight reply without post-cancel side effects
+ok 6 - pauseResume invalidates in-flight reply without post-cancel side effects
+  ---
+  duration_ms: 4.787072
+  ...
+# Subtest: death invalidates in-flight reply without post-cancel side effects
+ok 7 - death invalidates in-flight reply without post-cancel side effects
+  ---
+  duration_ms: 7.509132
+  ...
+# Subtest: portal invalidates in-flight reply without post-cancel side effects
+ok 8 - portal invalidates in-flight reply without post-cancel side effects
+  ---
+  duration_ms: 6.65602
+  ...
+# Subtest: level invalidates in-flight reply without post-cancel side effects
+ok 9 - level invalidates in-flight reply without post-cancel side effects
+  ---
+  duration_ms: 6.122259
+  ...
+# Subtest: restart invalidates in-flight reply without post-cancel side effects
+ok 10 - restart invalidates in-flight reply without post-cancel side effects
+  ---
+  duration_ms: 10.732761
+  ...
+# Subtest: speed invalidates in-flight reply without post-cancel side effects
+ok 11 - speed invalidates in-flight reply without post-cancel side effects
+  ---
+  duration_ms: 3.802879
+  ...
+# Subtest: brain invalidates in-flight reply without post-cancel side effects
+ok 12 - brain invalidates in-flight reply without post-cancel side effects
+  ---
+  duration_ms: 4.898987
+  ...
+# Subtest: takeover removes AI intent and preserves first human movement
+ok 13 - takeover removes AI intent and preserves first human movement
+  ---
+  duration_ms: 2.966846
+  ...
+# Subtest: remote deadline releases a hung request and uses local fallback
+ok 14 - remote deadline releases a hung request and uses local fallback
+  ---
+  duration_ms: 104.169357
+  ...
+# Subtest: provider error uses local fallback and accelerated mode skips provider
+ok 15 - provider error uses local fallback and accelerated mode skips provider
+  ---
+  duration_ms: 5.149815
+  ...
+# Subtest: one abort signal and deadline cover gateway and direct fallback
+ok 16 - one abort signal and deadline cover gateway and direct fallback
+  ---
+  duration_ms: 104.812181
+  ...
+# Subtest: old request completion cannot clear a newer request busy state
+ok 17 - old request completion cannot clear a newer request busy state
+  ---
+  duration_ms: 4.702632
+  ...
+# Subtest: rapid stop/start keeps only one scheduled loop
+ok 18 - rapid stop/start keeps only one scheduled loop
+  ---
+  duration_ms: 2.864437
+  ...
+# Subtest: veto does not reset streak or penalize executed history; actual death does
+ok 19 - veto does not reset streak or penalize executed history; actual death does
+  ---
+  duration_ms: 7.32636
+  ...
+# Subtest: reset removes current and legacy memory and refreshes telemetry
+ok 20 - reset removes current and legacy memory and refreshes telemetry
+  ---
+  duration_ms: 4.296852
+  ...
+# Subtest: accepted remote decisions retain model threat and probability telemetry
+ok 21 - accepted remote decisions retain model threat and probability telemetry
+  ---
+  duration_ms: 3.487086
+  ...
+# Subtest: approaching traffic kills an idle road player once and respawns
+ok 22 - approaching traffic kills an idle road player once and respawns
+  ---
+  duration_ms: 14.478142
+  ...
+# Subtest: collision precedes queued input and final death does not repeat
+ok 23 - collision precedes queued input and final death does not repeat
+  ---
+  duration_ms: 8.511355
+  ...
+# Subtest: other rows and banks remain safe; landing collision remains active
+ok 24 - other rows and banks remain safe; landing collision remains active
+  ---
+  duration_ms: 2.876326
+  ...
+# Subtest: controlled real-time loop advances 1x, 2x and 5x using fixed steps
+ok 25 - controlled real-time loop advances 1x, 2x and 5x using fixed steps
+  ---
+  duration_ms: 29.723097
+  ...
+# Subtest: hop duration remains eight simulation ticks at every speed
+ok 26 - hop duration remains eight simulation ticks at every speed
+  ---
+  duration_ms: 2.865953
+  ...
+1..26
+# tests 26
+# suites 0
+# pass 26
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1252.860186
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.713s
+
+OK

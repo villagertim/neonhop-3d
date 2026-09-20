@@ -1,0 +1,110 @@
+[
+  {
+    id: 'trajectory-0-tick-0',
+    variant: 'geometry',
+    action: 'DOWN',
+    safe: false,
+    progress: 0,
+    best: 2,
+    ms: 527.8956510010175
+  },
+  {
+    id: 'trajectory-0-tick-0',
+    variant: 'supported',
+    action: 'LEFT',
+    safe: true,
+    progress: 2,
+    best: 2,
+    ms: 366.47785500099417
+  },
+  {
+    id: 'trajectory-0-tick-1504',
+    variant: 'supported',
+    action: 'UP',
+    safe: true,
+    progress: 3,
+    best: 3,
+    ms: 342.01317800034303
+  },
+  {
+    id: 'trajectory-0-tick-1504',
+    variant: 'geometry',
+    action: 'WAIT',
+    safe: true,
+    progress: 2,
+    best: 3,
+    ms: 329.43816800252534
+  },
+  {
+    id: 'trajectory-0-tick-106',
+    variant: 'geometry',
+    action: 'DOWN',
+    safe: true,
+    progress: 2,
+    best: 2,
+    ms: 473.79374600131996
+  },
+  {
+    id: 'trajectory-0-tick-106',
+    variant: 'supported',
+    action: 'DOWN',
+    safe: true,
+    progress: 2,
+    best: 2,
+    ms: 309.1399240074679
+  },
+  {
+    id: 'trajectory-0-tick-2372',
+    variant: 'supported',
+    action: 'UP',
+    safe: true,
+    progress: 3,
+    best: 3,
+    ms: 290.4384249995928
+  },
+  {
+    id: 'trajectory-0-tick-2372',
+    variant: 'geometry',
+    action: 'RIGHT',
+    safe: false,
+    progress: 0,
+    best: 3,
+    ms: 1367.899845005013
+  },
+  {
+    id: 'trajectory-0-tick-392',
+    variant: 'geometry',
+    action: 'UP',
+    safe: false,
+    progress: 0,
+    best: 2,
+    ms: 314.0001499996288
+  },
+  {
+    id: 'trajectory-0-tick-392',
+    variant: 'supported',
+    action: 'DOWN',
+    safe: true,
+    progress: 2,
+    best: 2,
+    ms: 359.97005298850127
+  },
+  {
+    id: 'trajectory-0-tick-1080',
+    variant: 'supported',
+    action: 'UP',
+    safe: true,
+    progress: 3,
+    best: 3,
+    ms: 290.17391499655787
+  },
+  {
+    id: 'trajectory-0-tick-1080',
+    variant: 'geometry',
+    action: 'UP',
+    safe: true,
+    progress: 3,
+    best: 3,
+    ms: 288.67822399479337
+  }
+]

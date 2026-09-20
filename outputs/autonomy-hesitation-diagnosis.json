@@ -1,0 +1,173 @@
+[
+  {
+    "phase": 0,
+    "decisions": 6606,
+    "waits": 6085,
+    "waitWithSafeForward": 102,
+    "waitWithImmediateForwardOnly": 48,
+    "learnedOverride": 0,
+    "reasons": {
+      "Vehicle collision trajectory": 1431,
+      "Water drowning / log miss": 3911,
+      "Fatal portal barrier wall impact or occupied portal": 593,
+      "No future escape path from Lane 2 log": 48
+    },
+    "examples": [
+      {
+        "level": 1,
+        "position": {
+          "x": -3.834999999999998,
+          "y": 0,
+          "z": 5
+        },
+        "forward": {
+          "safe": true,
+          "base": -1800,
+          "q": 0,
+          "penalty": 0,
+          "total": -1800
+        },
+        "wait": {
+          "safe": true,
+          "base": 60,
+          "q": 0,
+          "penalty": 0,
+          "total": 60
+        }
+      },
+      {
+        "level": 1,
+        "position": {
+          "x": -2.68833333333333,
+          "y": 0,
+          "z": 5
+        },
+        "forward": {
+          "safe": true,
+          "base": -1800,
+          "q": 0,
+          "penalty": 0,
+          "total": -1800
+        },
+        "wait": {
+          "safe": true,
+          "base": 460,
+          "q": 0,
+          "penalty": 0,
+          "total": 460
+        }
+      },
+      {
+        "level": 1,
+        "position": {
+          "x": -4,
+          "y": 0,
+          "z": 3
+        },
+        "forward": {
+          "safe": true,
+          "base": -2300,
+          "q": 0,
+          "penalty": 0,
+          "total": -2300
+        },
+        "wait": {
+          "safe": true,
+          "base": 60,
+          "q": 15.6,
+          "penalty": 0,
+          "total": 75.6
+        }
+      },
+      {
+        "level": 1,
+        "position": {
+          "x": 3.306666666666675,
+          "y": 0,
+          "z": 4
+        },
+        "forward": {
+          "safe": true,
+          "base": -1800,
+          "q": 0,
+          "penalty": 0,
+          "total": -1800
+        },
+        "wait": {
+          "safe": true,
+          "base": 460,
+          "q": 0,
+          "penalty": 0,
+          "total": 460
+        }
+      },
+      {
+        "level": 2,
+        "position": {
+          "x": -4.397250000000007,
+          "y": 0,
+          "z": 3
+        },
+        "forward": {
+          "safe": true,
+          "base": -2300,
+          "q": 0,
+          "penalty": 0,
+          "total": -2300
+        },
+        "wait": {
+          "safe": true,
+          "base": 460,
+          "q": 0,
+          "penalty": 0,
+          "total": 460
+        }
+      }
+    ],
+    "run": {
+      "captures": 15,
+      "deaths": 0
+    }
+  },
+  {
+    "phase": 5,
+    "decisions": 6652,
+    "waits": 6138,
+    "waitWithSafeForward": 19,
+    "waitWithImmediateForwardOnly": 0,
+    "learnedOverride": 0,
+    "reasons": {
+      "Vehicle collision trajectory": 1661,
+      "Water drowning / log miss": 3722,
+      "Fatal portal barrier wall impact or occupied portal": 736
+    },
+    "examples": [
+      {
+        "level": 1,
+        "position": {
+          "x": -4.395,
+          "y": 0,
+          "z": 3
+        },
+        "forward": {
+          "safe": true,
+          "base": -2300,
+          "q": 0,
+          "penalty": 0,
+          "total": -2300
+        },
+        "wait": {
+          "safe": true,
+          "base": 460,
+          "q": 0,
+          "penalty": 0,
+          "total": 460
+        }
+      }
+    ],
+    "run": {
+      "captures": 19,
+      "deaths": 0
+    }
+  }
+]

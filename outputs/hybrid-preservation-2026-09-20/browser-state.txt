@@ -1,0 +1,64 @@
+Browser tab: 3, Title: "NeonHop 3D / Afterdark", URL: "http://127.0.0.1:8000/".
+0 AXWebArea NeonHop 3D / Afterdark, URL: 127.0.0.1:8000/
+	1 container app-container
+		2 container sidebar
+			3 container
+				4 heading NEONHOP 3D, Value: 1
+					5 text NEONHOP 3D
+				6 heading AFTERDARK, Value: 2
+					7 text AFTERDARK
+			8 container
+				9 text SCORE
+				73 text 003390
+				11 text HIGH SCORE
+				74 text 174930
+				13 text LIVES
+				14 text LEVEL
+				75 text 1
+		16 container game-stage
+			17 container canvas-wrapper
+				18 image game-canvas
+				19 container ai-telemetry-hud
+					20 text AI SPECTATOR
+					21 button TAKE CONTROL, Help: Take player control, ID: btn-take-control
+					22 text DECISION (CHOICE)
+					64 text ■ WAIT
+					24 text THREAT (SCORE)
+					65 text SAFE
+					26 text EVAC LOG (NOUL)
+					66 text 5%
+					28 text FWD CLEAR (NOUL)
+					67 text 5%
+					30 text STREAK (GOAL: 100)
+					68 text 4 / 100 (Best: 137)
+					69 text ENGINE: LOCAL POLICY
+					70 text DECISION DELAY: 14 ms
+					71 text DECISIONS: 50045
+				35 container
+					36 text NEONHOP 3D / AFTERDARK
+					37 heading CROSS THE NIGHT, Value: 2
+						38 text CROSS THE NIGHT
+					39 text CHOOSE YOUR PLAYSTYLE
+					40 button START GAME, ID: btn-start-game
+					41 button WATCH AI PLAY (JEV), ID: btn-watch-ai
+				42 container
+					72 text NEONHOP 3D / AFTERDARK
+					44 heading PAUSED, Value: 2
+						45 text PAUSED
+					46 text PRESS ESC TO RESUME
+				47 container
+					48 text NEONHOP 3D / AFTERDARK
+					49 heading GAME OVER, Value: 2
+						50 text GAME OVER
+					51 container high-score-form
+						52 text NEW HIGH SCORE!
+						53 text field (settable) player-initials
+						54 button SUBMIT, ID: btn-submit-score
+					55 text PRESS ENTER TO RESTART
+			56 container touch-controls
+				57 button ▲, ID: pad-up
+				58 button ◀, ID: pad-left
+				59 button ▶, ID: pad-right
+				60 button ▼, ID: pad-down
+
+The focused UI element is 41 button WATCH AI PLAY (JEV), ID: btn-watch-ai

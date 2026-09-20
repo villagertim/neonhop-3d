@@ -1,0 +1,1 @@
+PASS: assets, browser-origin gateway, private-file denial, human play, pause/resume, 1x/2x/5x, spectator, takeover, reset/cancel/reload, delayed reply, game over/restart; no page exceptions

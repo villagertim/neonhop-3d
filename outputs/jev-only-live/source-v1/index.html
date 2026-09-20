@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>NeonHop 3D / Afterdark</title>
+    <!-- Global Error Diagnostic Alert Shield -->
+    <script>
+        window.onerror = function(message, source, lineno, colno, error) {
+            alert("BROWSER ERROR DETECTED:\n" + message + "\nSource: " + source + "\nLine: " + lineno + "\nCol: " + colno);
+            return false;
+        };
+        window.onunhandledrejection = function(event) {
+            alert("UNHANDLED REJECTION DETECTED:\n" + event.reason);
+        };
+    </script>
+    <!-- Premium display and monospace UI type -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=20260920-jevonly">
+    
+    <!-- ES6 Module Import Map for Three.js r160 -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "/src/gameEngine.js": "/src/gameEngine.js?v=20260920-jevonly",
+          "/src/renderer.js": "/src/renderer.js?v=20260920-jevonly",
+          "/src/soundEngine.js": "/src/soundEngine.js?v=20260920-jevonly",
+          "/src/inputManager.js": "/src/inputManager.js?v=20260920-jevonly",
+          "/src/leaderboard.js": "/src/leaderboard.js?v=20260920-jevonly",
+          "/src/jevOnlyAgent.js": "/src/jevOnlyAgent.js?v=20260920-jevonly"
+        }
+      }
+    </script>
+</head>
+<body>
+    <div id="app-container">
+        <!-- Sidebar HUD and Control Panel -->
+        <aside id="sidebar" class="glass-panel accelerated">
+            <header>
+                <h1 class="glitch-text" data-text="NEONHOP 3D">NEONHOP 3D</h1>
+                <h2 class="neon-pink-text">AFTERDARK</h2>
+            </header>
+
+            <section class="stats-panel">
+                <div class="stat-row">
+                    <span class="stat-label">SCORE</span>
+                    <span id="current-score" class="stat-value neon-cyan-text">000000</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">SESSION HIGH</span>
+                    <span id="high-score" class="stat-value neon-pink-text">000000</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">LIVES</span>
+                    <div id="lives-container">
+                        <!-- Dynamic indicator elements -->
+                        <span class="live-pip font-pill"></span>
+                        <span class="live-pip font-pill"></span>
+                        <span class="live-pip font-pill"></span>
+                    </div>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">LEVEL</span>
+                    <span id="game-level" class="stat-value neon-green-text">1</span>
+                </div>
+            </section>
+
+            <section class="control-panel">
+                <button id="btn-pause" class="btn btn-primary" disabled>PAUSE</button>
+                <button id="btn-restart" class="btn btn-secondary">NEW GAME</button>
+                <button id="btn-toggle-ai" class="btn btn-ai-toggle" title="Toggle AI Spectator Mode">
+                    <span class="ai-status-pip"></span>
+                    <span id="ai-toggle-label">AI SPECTATOR: OFF</span>
+                </button>
+                <div class="speed-controls-group">
+                    <span class="speed-label">SPEED:</span>
+                    <button id="btn-speed-1x" class="btn btn-micro active">1X</button>
+                    <button id="btn-speed-2x" class="btn btn-micro">2X</button>
+                    <button id="btn-speed-5x" class="btn btn-micro">5X</button>
+                </div>
+                <button id="btn-export-baseline" class="btn btn-secondary btn-micro">EXPORT BASELINE</button>
+                <div class="audio-controls">
+                    <button id="btn-mute" class="btn btn-icon" title="Toggle Sound">
+                        <span class="icon">🔊</span>
+                    </button>
+                    <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5" class="slider">
+                </div>
+            </section>
+
+            <section class="leaderboard-section">
+                <h3>LEADERBOARD</h3>
+                <ol id="leaderboard-list">
+                    <!-- Loaded dynamically -->
+                    <li><span class="rank">1.</span> <span class="initials">SYS</span> <span class="score">005000</span></li>
+                    <li><span class="rank">2.</span> <span class="initials">TIM</span> <span class="score">003000</span></li>
+                    <li><span class="rank">3.</span> <span class="initials">ANN</span> <span class="score">001500</span></li>
+                </ol>
+            </section>
+        </aside>
+
+        <!-- Main Gameplay Arena -->
+        <main id="game-stage">
+            <div id="canvas-wrapper">
+                <!-- Retro CRT Scanline Filters & Glare Screen Overlay -->
+                <div id="crt-overlay" class="accelerated"></div>
+
+                <!-- Arcade Ticking Countdown Timer Bar -->
+                <div id="timer-bar-wrapper">
+                    <div id="timer-bar"></div>
+                </div>
+
+                <canvas id="game-canvas"></canvas>
+
+                <!-- Autonomous Jev AI Spectator Telemetry HUD -->
+                <div id="ai-telemetry-hud" class="telemetry-hud hide">
+                    <div class="telemetry-header">
+                        <div class="telemetry-title">
+                            <span class="ai-live-pulse"></span>
+                            <span class="hud-label">JEV ONLY · BASELINE</span>
+                        </div>
+                        <button id="btn-take-control" class="btn-micro" title="Take player control">TAKE CONTROL</button>
+                    </div>
+                    <div class="telemetry-grid">
+                        <div class="telemetry-cell">
+                            <span class="cell-label">DECISION (CHOICE)</span>
+                            <span id="hud-action" class="cell-value cell-action">WAIT</span>
+                        </div>
+                        <div class="telemetry-cell">
+                            <span class="cell-label">THREAT (SCORE)</span>
+                            <span id="hud-threat" class="cell-value cell-threat threat-safe">SAFE</span>
+                        </div>
+                        <div class="telemetry-cell">
+                            <span class="cell-label">EVAC LOG (NOUL)</span>
+                            <div class="noul-bar-wrapper">
+                                <div id="hud-evac-bar" class="noul-bar" style="width: 5%;"></div>
+                            </div>
+                            <span id="hud-evac-val" class="noul-val">5%</span>
+                        </div>
+                        <div class="telemetry-cell">
+                            <span class="cell-label">FWD CLEAR (NOUL)</span>
+                            <div class="noul-bar-wrapper">
+                                <div id="hud-forward-bar" class="noul-bar safe-bar" style="width: 95%;"></div>
+                            </div>
+                            <span id="hud-forward-val" class="noul-val">95%</span>
+                        </div>
+                        <div class="telemetry-cell cell-streak">
+                            <span class="cell-label">SESSION CAPTURES / DEATHS</span>
+                            <span id="hud-streak-val" class="noul-val">0 / 0</span>
+                        </div>
+                    </div>
+                    <div class="telemetry-footer">
+                        <p id="baseline-status">Jev-only · simulation freezes during requests</p><button id="btn-retry-jev" class="btn btn-secondary btn-micro" hidden>RETRY JEV</button><span id="hud-source" class="footer-meta">ENGINE: JEV-1.13</span>
+                        <span id="hud-latency" class="footer-meta">LATENCY: -- ms</span>
+                        <span id="hud-count" class="footer-meta">DECISIONS: 0</span>
+                    </div>
+                </div>
+
+                <!-- UI Overlays -->
+                <div id="overlay-start" class="overlay glass-overlay active">
+                    <div class="overlay-content">
+                        <h2 class="neon-cyan-glow">CROSS THE NIGHT</h2>
+                        <p class="subtitle">CHOOSE YOUR PLAYSTYLE</p>
+                        <div class="start-actions">
+                            <button id="btn-start-game" class="btn btn-neon-glow">START GAME</button>
+                            <button id="btn-watch-ai" class="btn btn-neon-ai">WATCH JEV ONLY</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="overlay-paused" class="overlay glass-overlay">
+                    <div class="overlay-content">
+                        <h2 class="neon-pink-glow">PAUSED</h2>
+                        <p class="subtitle">PRESS ESC TO RESUME</p>
+                    </div>
+                </div>
+
+                <div id="overlay-gameover" class="overlay glass-overlay">
+                    <div class="overlay-content">
+                        <h2 class="neon-red-glow">GAME OVER</h2>
+                        <div id="high-score-form" class="hide">
+                            <p class="neon-pink-text">NEW HIGH SCORE!</p>
+                            <input type="text" id="player-initials" maxlength="3" placeholder="AAA" autofocus>
+                            <button id="btn-submit-score" class="btn btn-neon-glow">SUBMIT</button>
+                        </div>
+                        <p class="subtitle">PRESS ENTER TO RESTART</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Touch Virtual D-Pad for Mobile -->
+            <div id="touch-controls" class="hide-on-desktop">
+                <div class="dpad">
+                    <button id="pad-up" class="pad-btn up">▲</button>
+                    <button id="pad-left" class="pad-btn left">◀</button>
+                    <div class="center-nub"></div>
+                    <button id="pad-right" class="pad-btn right">▶</button>
+                    <button id="pad-down" class="pad-btn down">▼</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modular Bootstrap Script Entry -->
+    <script type="module" src="src/main.js?v=20260920-jevonly"></script>
+</body>
+</html>
